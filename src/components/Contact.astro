@@ -1,0 +1,56 @@
+---
+import { profile } from '../data/profile';
+---
+
+<section id="contact" class="container section" aria-labelledby="contact-title">
+  <h2 id="contact-title" class="section-title">
+    Contact
+  </h2>
+
+  <p class="lead">
+    Hiring for a front-end or AI product team? I'm happy to talk about roles, relocation, or how I'd
+    approach your product.
+  </p>
+
+  <a class="email" href={`mailto:${profile.email}`}>
+    {profile.email}
+  </a>
+
+  <ul role="list" class="links">
+    <li>
+      <a href={profile.links.linkedin} rel="me">
+        LinkedIn
+      </a>
+    </li>
+    <li>
+      <a href={profile.links.github} rel="me">
+        GitHub
+      </a>
+    </li>
+  </ul>
+</section>
+
+<style>
+  .lead {
+    max-width: 34rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
+  }
+
+  .email {
+    display: inline-block;
+    margin-top: 1.5rem;
+    font-size: clamp(1.125rem, 4vw, 1.5rem);
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration-color: currentColor;
+    overflow-wrap: anywhere;
+  }
+
+  .links {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    color: var(--muted);
+  }
+</style>

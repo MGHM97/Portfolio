@@ -1,0 +1,67 @@
+---
+import { skills } from '../data/profile';
+---
+
+<section id="skills" class="container section" aria-labelledby="skills-title">
+  <h2 id="skills-title" class="section-title">
+    Skills
+  </h2>
+
+  <dl class="groups">
+    {Object.entries(skills).map(([group, items]) => (
+      <div class="group">
+        <dt>{group}</dt>
+        <dd>
+          <ul role="list">
+            {items.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        </dd>
+      </div>
+    ))}
+  </dl>
+</section>
+
+<style>
+  .groups {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .group {
+    display: grid;
+    gap: 0.5rem 2rem;
+  }
+
+  @media (min-width: 40rem) {
+    .group {
+      grid-template-columns: 9rem 1fr;
+    }
+  }
+
+  dt {
+    padding-top: 0.3rem;
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--muted);
+  }
+
+  dd {
+    margin: 0;
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  li {
+    padding: 0.25rem 0.75rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    font-size: 0.875rem;
+  }
+</style>

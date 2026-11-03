@@ -1,0 +1,62 @@
+---
+import ThemeToggle from './ThemeToggle.astro';
+import { profile } from '../data/profile';
+
+const nav = [
+  { href: '#experience', label: 'Experience' },
+  { href: '#skills', label: 'Skills' },
+  { href: '#contact', label: 'Contact' },
+];
+---
+
+<header class="container header">
+  <a class="brand" href="/">
+    {profile.name}
+  </a>
+  <nav aria-label="Primary">
+    <ul role="list">
+      {nav.map((item) => (
+        <li>
+          <a href={item.href}>{item.label}</a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+  <ThemeToggle />
+</header>
+
+<style>
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding-block: 1.5rem;
+  }
+
+  .brand {
+    margin-right: auto;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  ul {
+    display: flex;
+    gap: 1.25rem;
+    font-size: 0.9375rem;
+  }
+
+  ul a {
+    color: var(--muted);
+    text-decoration: none;
+  }
+
+  ul a:hover {
+    color: var(--text);
+  }
+
+  @media (max-width: 30rem) {
+    nav {
+      display: none;
+    }
+  }
+</style>
