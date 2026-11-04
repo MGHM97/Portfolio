@@ -4,7 +4,7 @@ export const fr: Dictionary = {
   meta: {
     title: 'Mateus Vieira — Ingénieur Front-end Senior',
     description:
-      'Je conçois des interfaces accessibles et propulsées par l’IA, à grande échelle. Ouvert au télétravail et à la relocalisation en Amérique du Nord et en Europe.',
+      'Ingénieur Front-end Senior qui conçoit des interfaces accessibles et propulsées par l’IA, à grande échelle. React, TypeScript et micro-frontends. Ouvert au télétravail et à la relocalisation en Amérique du Nord et en Europe.',
   },
   a11y: {
     skipToContent: 'Aller au contenu',
@@ -22,11 +22,12 @@ export const fr: Dictionary = {
     role: 'Ingénieur Front-end Senior',
     headline: 'Je conçois des interfaces accessibles et propulsées par l’IA, à grande échelle.',
     summary:
-      'Près de cinq ans à livrer des produits React et TypeScript. Je conçois actuellement l’architecture micro-frontend chez HP Inc., déployée sur des millions d’appareils dans le monde, et je dirige le front-end d’un projet de R&D en santé fondé sur l’IA à l’UFAM.',
+      'Environ cinq ans à livrer des produits React et TypeScript. Chez HP Inc., je développe des micro-frontends pour une application multiplateforme utilisée sur des millions d’appareils. À l’UFAM, je dirige le front-end d’une plateforme d’IA qui aide les soignants à prédire l’évolution de la démence.',
     availability: 'Ouvert au télétravail et à la relocalisation — Amérique du Nord et Europe',
     location: 'Manaus, Brésil',
+    overlap: 'Disponible sur les horaires de la côte Est américaine et des matinées européennes',
     getInTouch: 'Me contacter',
-    downloadCv: 'Télécharger le CV',
+    downloadCv: 'Télécharger le CV (en anglais)',
   },
   work: {
     title: 'Projets choisis',
@@ -40,24 +41,53 @@ export const fr: Dictionary = {
   experience: {
     title: 'Expérience',
     educationTitle: 'Formation',
+    languagesTitle: 'Langues',
     present: 'aujourd’hui',
     expected: (year) => `Prévu en ${year}`,
+    via: (company) => `via ${company}`,
+    modes: { remote: 'Télétravail', onSite: 'Sur site', hybrid: 'Hybride' },
     jobs: {
       hp: {
         role: 'Ingénieur logiciel senior',
         highlights: [
-          'Conception de l’architecture micro-frontend d’un produit multiplateforme utilisé sur des millions d’appareils actifs dans le monde.',
+          'Développement de plus de 12 micro-frontends en production avec React et TypeScript pour l’application multiplateforme principale de HP (Windows, macOS, iOS, Android), utilisée sur des millions d’appareils actifs.',
+          'Réduction d’environ 30 % du temps de résolution des bugs entre équipes grâce à des logs d’observabilité respectueux de la vie privée pour les payloads API et natifs, accompagnés de guides de diagnostic.',
+          'Conception de pipelines de déploiement indépendants avec SystemJS et les import maps, gérant le chargement à l’exécution, le versionnage et les déploiements DEV/ITG/PROD dans l’hôte Windows natif.',
+          'Analyse de régressions multiplateformes depuis l’interface JavaScript, à travers les bridge APIs, jusqu’aux bibliothèques natives C#/.NET.',
+          'Pilotage de la migration de React 16 à 18 et standardisation de Jest, Playwright et React Testing Library, avec une couverture de tests d’environ 90 % dans la CI GitHub Actions.',
         ],
       },
       ufam: {
         role: 'Lead Front-end · R&D santé et IA',
+        note: 'Projet académique à temps partiel',
         highlights: [
-          'Direction du front-end d’un projet de recherche qui intègre des modèles d’IA dans des interfaces à usage clinique.',
+          'Direction de l’architecture front-end (React 19, TypeScript, Vite) d’une plateforme web et IA qui suit plus de 200 patients et aide médecins et infirmiers à prédire l’évolution de la démence.',
+          'Développement du flux de saisie des données cliniques : 16 formulaires de cas avec champs conditionnels et calcul en temps réel du risque à partir de biomarqueurs (ApoB, Aβ42/40).',
+          'Développement d’un tableau de bord de données issues d’objets connectés (fréquence cardiaque, EDA, PPG, sommeil) pour valider les jeux de données d’IA.',
+          'Livraison de l’export des données de recherche (841 champs vers XLSX/CSV), de rapports médicaux en PDF et d’une authentification JWT avec permissions par rôle.',
+        ],
+      },
+      ipdec: {
+        role: 'Développeur Front-end',
+        highlights: [
+          'Réduction des cycles de traitement d’un mois à une semaine pour des clients industriels comme LG et Denso, grâce à une plateforme transverse d’automatisation et de tests qualité.',
+          'Regroupement de tâches internes dispersées dans une seule plateforme React, TypeScript et Vue.js, réduisant le temps de traitement de 20 %.',
+        ],
+      },
+      driven: {
+        role: 'Développeur Web Full Stack',
+        highlights: [
+          'Développement d’applications pédagogiques full stack et d’API REST (React, TypeScript, Node.js, Express, Prisma, PostgreSQL) sous Docker pour former des élèves de bootcamp.',
         ],
       },
     },
     degrees: {
-      msc: 'Master en intelligence artificielle',
+      msc: 'Master en génie électrique (spécialité IA)',
+      bsc: 'Licence en informatique',
+    },
+    spoken: {
+      pt: { name: 'Portugais', level: 'Langue maternelle' },
+      en: { name: 'Anglais', level: 'Compétence professionnelle complète' },
     },
   },
   skills: {
@@ -65,8 +95,10 @@ export const fr: Dictionary = {
     groups: {
       languages: 'Langages',
       frontend: 'Frontend',
-      quality: 'Qualité et accessibilité',
-      delivery: 'Livraison',
+      architecture: 'Architecture',
+      backend: 'Backend et API',
+      delivery: 'Tests et livraison',
+      crossPlatform: 'Multiplateforme',
     },
   },
   contact: {

@@ -13,3 +13,4 @@ export function t(locale: Locale): Dictionary {
 
 export * from './config';
 export type { Dictionary };
+export * from './format';

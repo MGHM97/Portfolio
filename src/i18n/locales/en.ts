@@ -1,4 +1,10 @@
-import type { EducationId, ExperienceId, SkillGroup } from '../../data/profile';
+import type {
+  EducationId,
+  ExperienceId,
+  SkillGroup,
+  SpokenLanguage,
+  WorkMode,
+} from '../../data/profile';
 
 export interface Dictionary {
   meta: {
@@ -23,6 +29,7 @@ export interface Dictionary {
     summary: string;
     availability: string;
     location: string;
+    overlap: string;
     getInTouch: string;
     downloadCv: string;
   };
@@ -37,10 +44,14 @@ export interface Dictionary {
   experience: {
     title: string;
     educationTitle: string;
+    languagesTitle: string;
     present: string;
     expected: (year: string) => string;
-    jobs: Record<ExperienceId, { role: string; highlights: string[] }>;
+    via: (company: string) => string;
+    modes: Record<WorkMode, string>;
+    jobs: Record<ExperienceId, { role: string; note?: string; highlights: string[] }>;
     degrees: Record<EducationId, string>;
+    spoken: Record<SpokenLanguage, { name: string; level: string }>;
   };
   skills: {
     title: string;
@@ -66,7 +77,7 @@ export const en: Dictionary = {
   meta: {
     title: 'Mateus Vieira — Senior Front-end Engineer',
     description:
-      'I build accessible, AI-powered interfaces at scale. Open to remote roles and relocation in North America and Europe.',
+      'Senior Front-end Engineer building accessible, AI-powered interfaces at scale. React, TypeScript and micro-frontends. Open to remote roles and relocation in North America and Europe.',
   },
   a11y: {
     skipToContent: 'Skip to content',
@@ -84,9 +95,10 @@ export const en: Dictionary = {
     role: 'Senior Front-end Engineer',
     headline: 'I build accessible, AI‑powered interfaces at scale.',
     summary:
-      'Nearly five years shipping React and TypeScript products. I currently architect micro-frontends at HP Inc. serving millions of devices worldwide, and lead front-end engineering for an AI-driven healthcare R&D project at UFAM.',
+      'About five years building React and TypeScript products. At HP Inc. I ship micro-frontends for a cross-platform app used on millions of devices. At UFAM I lead the front-end of an AI platform that helps clinicians predict dementia progression.',
     availability: 'Open to remote roles and relocation — North America & Europe',
     location: 'Manaus, Brazil',
+    overlap: 'Full overlap with US Eastern and European mornings',
     getInTouch: 'Get in touch',
     downloadCv: 'Download CV',
   },
@@ -101,24 +113,53 @@ export const en: Dictionary = {
   experience: {
     title: 'Experience',
     educationTitle: 'Education',
+    languagesTitle: 'Languages',
     present: 'Present',
     expected: (year) => `Expected ${year}`,
+    via: (company) => `via ${company}`,
+    modes: { remote: 'Remote', onSite: 'On-site', hybrid: 'Hybrid' },
     jobs: {
       hp: {
         role: 'Senior Software Engineer',
         highlights: [
-          'Architect micro-frontends for a cross-platform product used on millions of active devices globally.',
+          "Built 12+ production micro-frontends in React and TypeScript for HP's core cross-platform app (Windows, macOS, iOS, Android), used on millions of active devices.",
+          'Cut cross-team bug resolution time by ~30% with privacy-compliant observability logs for API and native payloads, plus troubleshooting playbooks.',
+          'Architected independent deployment pipelines with SystemJS and import maps, handling runtime loading, versioning and DEV/ITG/PROD rollouts inside the native Windows host.',
+          'Traced cross-platform regressions from the JavaScript UI through bridge APIs down to native C#/.NET libraries.',
+          'Led the React 16 → 18 upgrade and standardized Jest, Playwright and React Testing Library, keeping ~90% test coverage in GitHub Actions CI.',
         ],
       },
       ufam: {
         role: 'Lead Front-end Engineer · AI Healthcare R&D',
+        note: 'Part-time academic project',
         highlights: [
-          'Lead front-end for a research project that brings AI models into clinical-facing user experiences.',
+          'Lead the front-end architecture (React 19, TypeScript, Vite) of an AI and web platform that monitors 200+ patients and helps doctors and nurses predict dementia progression.',
+          'Built the clinical data capture workflow: 16 case report forms with conditional fields and real-time biomarker risk calculations (ApoB, Aβ42/40).',
+          'Built a wearable-data dashboard (heart rate, EDA, PPG, sleep) used to validate AI datasets.',
+          'Delivered research data export (841 fields to XLSX/CSV), PDF medical reports and role-based JWT authentication.',
+        ],
+      },
+      ipdec: {
+        role: 'Front-end Developer',
+        highlights: [
+          'Cut process lifecycles from one month to one week for industrial clients such as LG and Denso with a cross-departmental automation and quality-testing platform.',
+          'Unified scattered internal tasks into a single React, TypeScript and Vue.js platform, reducing processing time by 20%.',
+        ],
+      },
+      driven: {
+        role: 'Full Stack Web Developer',
+        highlights: [
+          'Built full-stack educational apps and REST APIs (React, TypeScript, Node.js, Express, Prisma, PostgreSQL) in Docker to teach bootcamp students.',
         ],
       },
     },
     degrees: {
-      msc: 'M.Sc. in Artificial Intelligence',
+      msc: "Master's in Electrical Engineering (AI focus)",
+      bsc: 'B.Sc. in Computer Science',
+    },
+    spoken: {
+      pt: { name: 'Portuguese', level: 'Native' },
+      en: { name: 'English', level: 'Full professional proficiency' },
     },
   },
   skills: {
@@ -126,8 +167,10 @@ export const en: Dictionary = {
     groups: {
       languages: 'Languages',
       frontend: 'Frontend',
-      quality: 'Quality & a11y',
-      delivery: 'Delivery',
+      architecture: 'Architecture',
+      backend: 'Backend & APIs',
+      delivery: 'Testing & delivery',
+      crossPlatform: 'Cross-platform',
     },
   },
   contact: {

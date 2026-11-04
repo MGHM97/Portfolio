@@ -1,12 +1,13 @@
 ---
-import { education, experience } from '../data/profile';
-import { t, type Locale } from '../i18n';
+import { education, experience, spokenLanguages } from '../data/profile';
+import { formatCountry, formatMonth, t, type Locale } from '../i18n';
 
 interface Props {
   locale: Locale;
 }
 
-const { experience: copy } = t(Astro.props.locale);
+const { locale } = Astro.props;
+const { experience: copy } = t(locale);
 ---
 
 <section id="experience" class="container section" aria-labelledby="experience-title">
@@ -15,27 +16,41 @@ const { experience: copy } = t(Astro.props.locale);
   </h2>
 
   <ol role="list" class="timeline">
-    {experience.map((job) => (
-      <li class="entry">
-        <p class="period">
-          {job.start} — {job.end ?? copy.present}
-        </p>
-        <div>
-          <h3>
-            {copy.jobs[job.id].role} <span class="company">· {job.company}</span>
-          </h3>
-          <ul>
-            {copy.jobs[job.id].highlights.map((item) => (
-              <li>{item}</li>
-            ))}
-          </ul>
-        </div>
-      </li>
-    ))}
+    {experience.map((job) => {
+      const { role, note, highlights } = copy.jobs[job.id];
+      return (
+        <li class="entry">
+          <p class="period">
+            <time datetime={job.start}>{formatMonth(locale, job.start)}</time>
+            {' — '}
+            {job.end ? (
+              <time datetime={job.end}>{formatMonth(locale, job.end)}</time>
+            ) : (
+              copy.present
+            )}
+          </p>
+          <div>
+            <h3>
+              {role} <span class="company">· {job.company}</span>
+            </h3>
+            <p class="where">
+              {job.via && <>{copy.via(job.via)} · </>}
+              {job.city}, {formatCountry(locale, job.country)} · {copy.modes[job.mode]}
+              {note && <> · {note}</>}
+            </p>
+            <ul>
+              {highlights.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </div>
+        </li>
+      );
+    })}
   </ol>
 
-  <h2 class="section-title education-title">{copy.educationTitle}</h2>
-  <ol role="list" class="timeline">
+  <h2 class="section-title subsection-title">{copy.educationTitle}</h2>
+  <ol role="list" class="timeline compact">
     {education.map((item) => (
       <li class="entry">
         <p class="period">{item.expected ? copy.expected(item.end) : item.end}</p>
@@ -45,6 +60,16 @@ const { experience: copy } = t(Astro.props.locale);
       </li>
     ))}
   </ol>
+
+  <h2 class="section-title subsection-title">{copy.languagesTitle}</h2>
+  <ul role="list" class="timeline compact">
+    {spokenLanguages.map((code) => (
+      <li class="entry">
+        <p class="period">{copy.spoken[code].level}</p>
+        <h3>{copy.spoken[code].name}</h3>
+      </li>
+    ))}
+  </ul>
 </section>
 
 <style>
@@ -54,6 +79,10 @@ const { experience: copy } = t(Astro.props.locale);
     padding: 0;
   }
 
+  .compact {
+    gap: 1.25rem;
+  }
+
   .entry {
     display: grid;
     gap: 0.25rem 2rem;
@@ -61,7 +90,7 @@ const { experience: copy } = t(Astro.props.locale);
 
   @media (min-width: 40rem) {
     .entry {
-      grid-template-columns: 9rem 1fr;
+      grid-template-columns: 10rem 1fr;
     }
   }
 
@@ -82,17 +111,23 @@ const { experience: copy } = t(Astro.props.locale);
     color: var(--muted);
   }
 
-  ul {
-    margin-top: 0.625rem;
-    padding-left: 1.1rem;
+  .where {
+    margin-top: 0.125rem;
+    font-size: 0.875rem;
     color: var(--muted);
   }
 
-  li + li {
+  ul:not([role]) {
+    margin-top: 0.75rem;
+    padding-inline-start: 1.1rem;
+    color: var(--muted);
+  }
+
+  ul:not([role]) li + li {
     margin-top: 0.375rem;
   }
 
-  .education-title {
+  .subsection-title {
     margin-top: 4rem;
   }
 </style>

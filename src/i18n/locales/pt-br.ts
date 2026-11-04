@@ -4,7 +4,7 @@ export const ptBr: Dictionary = {
   meta: {
     title: 'Mateus Vieira — Engenheiro Front-end Sênior',
     description:
-      'Construo interfaces acessíveis e com IA em grande escala. Aberto a vagas remotas e realocação para a América do Norte e a Europa.',
+      'Engenheiro Front-end Sênior que constrói interfaces acessíveis e com IA em grande escala. React, TypeScript e micro-frontends. Aberto a vagas remotas e realocação para a América do Norte e a Europa.',
   },
   a11y: {
     skipToContent: 'Pular para o conteúdo',
@@ -22,11 +22,12 @@ export const ptBr: Dictionary = {
     role: 'Engenheiro Front-end Sênior',
     headline: 'Construo interfaces acessíveis e com IA em grande escala.',
     summary:
-      'Quase cinco anos entregando produtos com React e TypeScript. Hoje sou responsável pela arquitetura de micro-frontends na HP Inc., usados em milhões de dispositivos no mundo todo, e lidero o front-end de um projeto de P&D em saúde com IA na UFAM.',
+      'Cerca de cinco anos construindo produtos com React e TypeScript. Na HP Inc., desenvolvo micro-frontends para um app multiplataforma usado em milhões de dispositivos. Na UFAM, lidero o front-end de uma plataforma de IA que ajuda profissionais de saúde a prever a progressão da demência.',
     availability: 'Aberto a vagas remotas e realocação — América do Norte e Europa',
     location: 'Manaus, Brasil',
+    overlap: 'Horário compatível com a costa leste dos EUA e com as manhãs na Europa',
     getInTouch: 'Entre em contato',
-    downloadCv: 'Baixar currículo',
+    downloadCv: 'Baixar currículo (em inglês)',
   },
   work: {
     title: 'Projetos em destaque',
@@ -39,24 +40,53 @@ export const ptBr: Dictionary = {
   experience: {
     title: 'Experiência',
     educationTitle: 'Formação',
-    present: 'Atual',
+    languagesTitle: 'Idiomas',
+    present: 'atual',
     expected: (year) => `Previsão: ${year}`,
+    via: (company) => `via ${company}`,
+    modes: { remote: 'Remoto', onSite: 'Presencial', hybrid: 'Híbrido' },
     jobs: {
       hp: {
         role: 'Engenheiro de Software Sênior',
         highlights: [
-          'Arquitetura de micro-frontends para um produto multiplataforma usado em milhões de dispositivos ativos no mundo todo.',
+          'Desenvolvi mais de 12 micro-frontends em produção com React e TypeScript para o principal app multiplataforma da HP (Windows, macOS, iOS, Android), usado em milhões de dispositivos ativos.',
+          'Acelerei em ~30% a resolução de bugs entre times com logs de observabilidade que respeitam a privacidade, expondo payloads de API e nativos, e playbooks de troubleshooting.',
+          'Arquitetei pipelines de deploy independentes com SystemJS e import maps, cuidando do carregamento em tempo de execução, versionamento e rollouts DEV/ITG/PROD dentro do host nativo Windows.',
+          'Rastreei regressões multiplataforma desde a interface em JavaScript, passando pelas bridge APIs, até as bibliotecas nativas em C#/.NET.',
+          'Liderei a migração do React 16 para o 18 e padronizei Jest, Playwright e React Testing Library, mantendo ~90% de cobertura de testes no CI com GitHub Actions.',
         ],
       },
       ufam: {
         role: 'Líder de Front-end · P&D em saúde com IA',
+        note: 'Projeto acadêmico em meio período',
         highlights: [
-          'Liderança do front-end de um projeto de pesquisa que leva modelos de IA para interfaces de uso clínico.',
+          'Lidero a arquitetura front-end (React 19, TypeScript, Vite) de uma plataforma web com IA que acompanha mais de 200 pacientes e ajuda médicos e enfermeiros a prever a progressão da demência.',
+          'Desenvolvi o fluxo de captura de dados clínicos: 16 fichas clínicas (CRFs) com campos condicionais e cálculo de risco por biomarcadores em tempo real (ApoB, Aβ42/40).',
+          'Desenvolvi um dashboard de dados de wearables (frequência cardíaca, EDA, PPG, sono) usado para validar os datasets de IA.',
+          'Entreguei a exportação de dados de pesquisa (841 campos para XLSX/CSV), laudos médicos em PDF e autenticação JWT com permissões por perfil.',
+        ],
+      },
+      ipdec: {
+        role: 'Desenvolvedor Front-end',
+        highlights: [
+          'Reduzi ciclos de processo de um mês para uma semana para clientes industriais como LG e Denso, com uma plataforma de automação e testes de qualidade integrando vários departamentos.',
+          'Unifiquei tarefas internas dispersas em uma única plataforma com React, TypeScript e Vue.js, reduzindo o tempo de processamento em 20%.',
+        ],
+      },
+      driven: {
+        role: 'Desenvolvedor Web Full Stack',
+        highlights: [
+          'Desenvolvi aplicações educacionais full stack e APIs REST (React, TypeScript, Node.js, Express, Prisma, PostgreSQL) em Docker para formar alunos de bootcamp.',
         ],
       },
     },
     degrees: {
-      msc: 'Mestrado em Inteligência Artificial',
+      msc: 'Mestrado em Engenharia Elétrica (ênfase em IA)',
+      bsc: 'Bacharelado em Ciência da Computação',
+    },
+    spoken: {
+      pt: { name: 'Português', level: 'Nativo' },
+      en: { name: 'Inglês', level: 'Proficiência profissional plena' },
     },
   },
   skills: {
@@ -64,8 +94,10 @@ export const ptBr: Dictionary = {
     groups: {
       languages: 'Linguagens',
       frontend: 'Frontend',
-      quality: 'Qualidade e acessibilidade',
-      delivery: 'Entrega',
+      architecture: 'Arquitetura',
+      backend: 'Backend e APIs',
+      delivery: 'Testes e entrega',
+      crossPlatform: 'Multiplataforma',
     },
   },
   contact: {
