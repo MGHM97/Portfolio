@@ -3,6 +3,7 @@ import LanguageSwitcher from './LanguageSwitcher.astro';
 import ThemeToggle from './ThemeToggle.astro';
 import { profile } from '../data/profile';
 import { localizePath, t, type Locale } from '../i18n';
+import { getPosts } from '../lib/posts';
 import { getWork } from '../lib/work';
 
 interface Props {
@@ -13,10 +14,12 @@ const { locale } = Astro.props;
 const dict = t(locale);
 const home = localizePath(locale);
 const hasWork = (await getWork(locale)).length > 0;
+const hasPosts = (await getPosts(locale)).length > 0;
 
 const nav = [
   ...(hasWork ? [{ hash: 'work', label: dict.nav.work }] : []),
   { hash: 'open-source', label: dict.nav.openSource },
+  ...(hasPosts ? [{ hash: 'writing', label: dict.nav.writing }] : []),
   { hash: 'experience', label: dict.nav.experience },
   { hash: 'skills', label: dict.nav.skills },
   { hash: 'contact', label: dict.nav.contact },

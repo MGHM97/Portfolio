@@ -21,6 +21,7 @@ export interface Dictionary {
   nav: {
     work: string;
     openSource: string;
+    writing: string;
     experience: string;
     skills: string;
     contact: string;
@@ -49,6 +50,12 @@ export interface Dictionary {
     source: string;
     demos: string;
     projects: Record<OpenSourceId, { tagline: string; description: string; highlights: string[] }>;
+  };
+  writing: {
+    title: string;
+    allPosts: string;
+    readingTime: (minutes: number) => string;
+    fallbackNotice: string;
   };
   experience: {
     title: string;
@@ -97,6 +104,7 @@ export const en: Dictionary = {
   nav: {
     work: 'Work',
     openSource: 'Open source',
+    writing: 'Writing',
     experience: 'Experience',
     skills: 'Skills',
     contact: 'Contact',
@@ -138,6 +146,12 @@ export const en: Dictionary = {
         ],
       },
     },
+  },
+  writing: {
+    title: 'Writing',
+    allPosts: 'All writing',
+    readingTime: (minutes) => `${minutes} min read`,
+    fallbackNotice: 'This article is not translated yet, so it is shown in English.',
   },
   experience: {
     title: 'Experience',

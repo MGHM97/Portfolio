@@ -1,0 +1,79 @@
+---
+import { defaultLocale, formatDate, languageTags, localizePath, t, type Locale } from '../i18n';
+import { getPosts, readingMinutes } from '../lib/posts';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const dict = t(locale);
+const posts = await getPosts(locale);
+---
+
+{posts.length > 0 && (
+  <section id="writing" class="container section" aria-labelledby="writing-title">
+    <h2 id="writing-title" class="section-title">
+      {dict.writing.title}
+    </h2>
+
+    <ol role="list" class="posts">
+      {posts.map(({ slug, entry, isFallback }) => (
+        <li class="post">
+          <p class="meta">
+            <time datetime={entry.data.published.toISOString().slice(0, 10)}>
+              {formatDate(locale, entry.data.published)}
+            </time>
+            {' · '}
+            {dict.writing.readingTime(readingMinutes(entry.body))}
+          </p>
+          <div lang={isFallback ? languageTags[defaultLocale] : undefined}>
+            <h3>
+              <a href={localizePath(locale, `/writing/${slug}/`)}>{entry.data.title}</a>
+            </h3>
+            <p class="description">{entry.data.description}</p>
+          </div>
+          {entry.data.draft && <p class="draft">{dict.work.draft}</p>}
+        </li>
+      ))}
+    </ol>
+  </section>
+)}
+
+<style>
+  .posts {
+    display: grid;
+    gap: 2rem;
+  }
+
+  .meta {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--muted);
+  }
+
+  h3 {
+    margin-top: 0.375rem;
+    font-size: 1.25rem;
+  }
+
+  h3 a {
+    text-decoration: none;
+  }
+
+  h3 a:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+  }
+
+  .description {
+    margin-top: 0.375rem;
+    color: var(--muted);
+  }
+
+  .draft {
+    margin-top: 0.5rem;
+    font-size: 0.8125rem;
+    color: var(--accent);
+  }
+</style>

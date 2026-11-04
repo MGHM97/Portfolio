@@ -25,6 +25,10 @@ export default defineConfig({
       ],
     },
   },
+  markdown: {
+    // Shiki relies on inline styles, which the CSP doesn't allow; Prism only emits classes.
+    syntaxHighlight: 'prism',
+  },
   i18n: {
     locales: [...locales],
     defaultLocale,

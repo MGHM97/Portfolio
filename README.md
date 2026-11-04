@@ -10,6 +10,7 @@ Personal site and portfolio of **Mateus Vieira**, Senior Front-end Engineer buil
 - Static i18n in five languages with typed dictionaries
 - Playwright + axe-core for end-to-end and WCAG 2.2 AA checks on desktop and mobile, in every locale
 - Content Security Policy with hashed inline scripts and styles
+- Markdown articles with build-time Prism highlighting (no inline styles, so it works under the CSP)
 - GitHub Actions for formatting, type checks, build and tests
 
 ## Getting started
@@ -27,7 +28,7 @@ The site ships in English (default, at `/`), Spanish (`/es/`), French (`/fr/`), 
 
 - **UI copy** lives in [`src/i18n/locales/`](src/i18n/locales). Each dictionary is typed against the English one, so a missing translation fails `astro check` and the build.
 - **Locale-independent data** (name, links, companies, dates, skills) lives in [`src/data/profile.ts`](src/data/profile.ts).
-- **Case studies** live in `src/content/work/<locale>/`. English is the source of truth; when a translation is missing, the English version is shown with a notice, marked `lang="en-US"` and canonicalized to the English URL.
+- **Case studies and articles** live in `src/content/work/<locale>/` and `src/content/posts/<locale>/`. English is the source of truth; when a translation is missing, the English version is shown with a notice, marked `lang="en-US"` and canonicalized to the English URL.
 - **Tests** run accessibility, layout and `hreflang` checks for every locale.
 
 To add a string, add it to the `Dictionary` type in `en.ts`; TypeScript then points at every locale that still needs it.

@@ -15,6 +15,7 @@ export const de: Dictionary = {
   nav: {
     work: 'Projekte',
     openSource: 'Open Source',
+    writing: 'Artikel',
     experience: 'Erfahrung',
     skills: 'Kenntnisse',
     contact: 'Kontakt',
@@ -57,6 +58,13 @@ export const de: Dictionary = {
         ],
       },
     },
+  },
+  writing: {
+    title: 'Artikel',
+    allPosts: 'Alle Artikel',
+    readingTime: (minutes) => `${minutes} Min. Lesezeit`,
+    fallbackNotice:
+      'Dieser Artikel ist noch nicht übersetzt und wird daher auf Englisch angezeigt.',
   },
   experience: {
     title: 'Erfahrung',

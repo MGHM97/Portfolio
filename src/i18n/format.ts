@@ -14,3 +14,10 @@ export function formatCountry(locale: Locale, regionCode: string) {
     new Intl.DisplayNames([languageTags[locale]], { type: 'region' }).of(regionCode) ?? regionCode
   );
 }
+
+export function formatDate(locale: Locale, date: Date) {
+  return new Intl.DateTimeFormat(languageTags[locale], {
+    dateStyle: 'long',
+    timeZone: 'UTC',
+  }).format(date);
+}

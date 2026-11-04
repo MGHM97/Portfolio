@@ -3,15 +3,15 @@ import { expect, test } from '@playwright/test';
 import { locales, wcagTags } from './locales';
 
 for (const locale of locales) {
-  test(`every published ${locale.code} case study is reachable and accessible`, async ({
+  test(`every published ${locale.code} case study and article is reachable and accessible`, async ({
     page,
   }) => {
     await page.goto(locale.path);
     const hrefs = await page
-      .locator('#work h3 a')
+      .locator('#work h3 a, #writing h3 a')
       .evaluateAll((links) => links.map((link) => link.getAttribute('href') ?? ''));
 
-    test.skip(hrefs.length === 0, 'No published case studies yet');
+    test.skip(hrefs.length === 0, 'No published case studies or articles yet');
 
     for (const href of hrefs) {
       await page.goto(href);

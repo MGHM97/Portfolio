@@ -15,6 +15,7 @@ export const ptBr: Dictionary = {
   nav: {
     work: 'Projetos',
     openSource: 'Open source',
+    writing: 'Artigos',
     experience: 'Experiência',
     skills: 'Habilidades',
     contact: 'Contato',
@@ -56,6 +57,12 @@ export const ptBr: Dictionary = {
         ],
       },
     },
+  },
+  writing: {
+    title: 'Artigos',
+    allPosts: 'Todos os artigos',
+    readingTime: (minutes) => `${minutes} min de leitura`,
+    fallbackNotice: 'Este artigo ainda não foi traduzido, por isso aparece em inglês.',
   },
   experience: {
     title: 'Experiência',

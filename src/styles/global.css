@@ -6,6 +6,10 @@
   --border: #dedbd2;
   --accent: #0b6b5f;
   --accent-soft: #dcefe9;
+  --code-keyword: #8a2d82;
+  --code-string: #2f6a1f;
+  --code-function: #1f5ea8;
+  --code-number: #9a4a00;
 
   --measure: 44rem;
   --gutter: clamp(1rem, 4vw, 2rem);
@@ -22,6 +26,10 @@
   --border: #2e2d2a;
   --accent: #4fd1b8;
   --accent-soft: #15302b;
+  --code-keyword: #e39ad9;
+  --code-string: #a8d68a;
+  --code-function: #8cbcf5;
+  --code-number: #f2b47a;
 
   color-scheme: dark;
 }
@@ -81,7 +89,7 @@ a:hover {
   border-radius: 2px;
 }
 
-ul[role='list'] {
+:is(ul, ol)[role='list'] {
   list-style: none;
   padding: 0;
 }
