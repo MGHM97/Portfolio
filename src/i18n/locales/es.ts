@@ -51,7 +51,8 @@ export const es: Dictionary = {
         highlights: [
           'StreamingText anuncia las respuestas en streaming frase a frase, en lugar de saturar al lector de pantalla con fragmentos.',
           'PromptInput gestiona Enter, Shift+Enter y Escape, nunca envía en mitad de una composición IME y mantiene el botón de envío enfocable.',
-          '2,2 KB con gzip, TypeScript estricto, 31 tests con Testing Library y axe-core, y una verificación de accesibilidad en el CI.',
+          'ToolCall muestra lo que hace un agente y anuncia cada cambio de estado una sola vez, sin volver a leer las llamadas ya terminadas del historial.',
+          '3,4 KB con gzip, TypeScript estricto, 49 tests con Testing Library y axe-core, y una verificación de accesibilidad en el CI.',
         ],
       },
     },

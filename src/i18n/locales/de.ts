@@ -52,7 +52,8 @@ export const de: Dictionary = {
         highlights: [
           'StreamingText kündigt gestreamte Antworten Satz für Satz an, statt Screenreader mit Fragmenten zu überfluten.',
           'PromptInput unterstützt Enter, Umschalt+Enter und Escape, sendet nie mitten in einer IME-Eingabe und hält den Senden-Button fokussierbar.',
-          '2,2 KB gzip, striktes TypeScript, 31 Tests mit Testing Library und axe-core sowie eine Barrierefreiheitsprüfung in der CI.',
+          'ToolCall zeigt, was ein Agent gerade tut, und kündigt jeden Statuswechsel genau einmal an – abgeschlossene Aufrufe aus dem Verlauf bleiben still.',
+          '3,4 KB gzip, striktes TypeScript, 49 Tests mit Testing Library und axe-core sowie eine Barrierefreiheitsprüfung in der CI.',
         ],
       },
     },

@@ -133,7 +133,8 @@ export const en: Dictionary = {
         highlights: [
           'StreamingText announces streamed responses one complete sentence at a time instead of flooding screen readers with fragments.',
           'PromptInput handles Enter, Shift+Enter and Escape, never sends in the middle of an IME composition, and keeps its send button focusable.',
-          '2.2 KB gzipped, strict TypeScript, 31 tests with Testing Library and axe-core, and an accessibility gate in CI.',
+          'ToolCall shows what an agent is doing and announces each status change once, while finished calls from chat history stay quiet.',
+          '3.4 KB gzipped, strict TypeScript, 49 tests with Testing Library and axe-core, and an accessibility gate in CI.',
         ],
       },
     },
