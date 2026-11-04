@@ -16,6 +16,7 @@ const hasWork = (await getWork(locale)).length > 0;
 
 const nav = [
   ...(hasWork ? [{ hash: 'work', label: dict.nav.work }] : []),
+  { hash: 'open-source', label: dict.nav.openSource },
   { hash: 'experience', label: dict.nav.experience },
   { hash: 'skills', label: dict.nav.skills },
   { hash: 'contact', label: dict.nav.contact },

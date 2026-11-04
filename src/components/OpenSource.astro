@@ -1,0 +1,156 @@
+---
+import { openSource } from '../data/profile';
+import { t, type Locale } from '../i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { openSource: copy } = t(Astro.props.locale);
+---
+
+<section id="open-source" class="container section" aria-labelledby="open-source-title">
+  <h2 id="open-source-title" class="section-title">
+    {copy.title}
+  </h2>
+
+  <ul role="list" class="projects">
+    {openSource.map((project) => {
+      const { tagline, description, highlights } = copy.projects[project.id];
+      return (
+        <li class="project">
+          <div class="heading">
+            <h3>
+              <a href={project.repo}>{project.name}</a>
+            </h3>
+            <span class="status">{copy.status(project.version)}</span>
+          </div>
+          <p class="tagline">{tagline}</p>
+          <p class="description">{description}</p>
+          <ul class="highlights">
+            {highlights.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+          <ul role="list" class="stack">
+            {project.stack.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+          <div class="links">
+            <a class="button primary" href={project.repo}>
+              {copy.source}
+            </a>
+            {project.demo && (
+              <a class="button" href={project.demo}>
+                {copy.demos}
+              </a>
+            )}
+          </div>
+        </li>
+      );
+    })}
+  </ul>
+</section>
+
+<style>
+  .project {
+    padding: clamp(1.25rem, 4vw, 2rem);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+  }
+
+  .heading {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.5rem 1rem;
+  }
+
+  h3 {
+    font-family: var(--font-mono);
+    font-size: 1.375rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+
+  h3 a {
+    text-decoration: none;
+  }
+
+  h3 a:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+  }
+
+  .status {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--accent);
+  }
+
+  .tagline {
+    margin-top: 0.5rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+  }
+
+  .description {
+    margin-top: 0.75rem;
+    color: var(--muted);
+  }
+
+  .highlights {
+    margin-top: 1rem;
+    padding-inline-start: 1.1rem;
+  }
+
+  .highlights li + li {
+    margin-top: 0.375rem;
+  }
+
+  .stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    margin-top: 1.25rem;
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--muted);
+  }
+
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+
+  .button {
+    padding: 0.625rem 1.125rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition:
+      border-color 150ms,
+      background-color 150ms;
+  }
+
+  .button:hover {
+    border-color: var(--muted);
+  }
+
+  .primary {
+    background: var(--text);
+    border-color: var(--text);
+    color: var(--bg);
+  }
+
+  .primary:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+</style>

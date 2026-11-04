@@ -14,6 +14,7 @@ export const fr: Dictionary = {
   },
   nav: {
     work: 'Projets',
+    openSource: 'Open source',
     experience: 'Expérience',
     skills: 'Compétences',
     contact: 'Contact',
@@ -37,6 +38,24 @@ export const fr: Dictionary = {
     draft: 'Brouillon — masqué en production',
     fallbackNotice:
       'Cette étude de cas n’est pas encore traduite ; elle est donc affichée en anglais.',
+  },
+  openSource: {
+    title: 'Open source',
+    status: (version) => `v${version} · en développement actif`,
+    source: 'Code source',
+    demos: 'Démos en ligne',
+    projects: {
+      'parley-ui': {
+        tagline: 'Des composants React accessibles pour les interfaces d’IA',
+        description:
+          'La plupart des interfaces de chat IA envoient le texte en streaming dans une région aria-live et s’arrêtent là : les lecteurs d’écran relisent toute la réponse à chaque token ou annoncent des fragments sans suite. parley-ui est ma réponse open source : de petits composants React sans style qui traitent correctement l’accessibilité des interfaces d’IA.',
+        highlights: [
+          'StreamingText annonce les réponses en streaming phrase par phrase, au lieu de submerger les lecteurs d’écran de fragments.',
+          'PromptInput gère Entrée, Maj+Entrée et Échap, n’envoie jamais au milieu d’une composition IME et garde son bouton d’envoi focalisable.',
+          '2,2 Ko gzippé, TypeScript strict, 31 tests avec Testing Library et axe-core, et un contrôle d’accessibilité dans la CI.',
+        ],
+      },
+    },
   },
   experience: {
     title: 'Expérience',

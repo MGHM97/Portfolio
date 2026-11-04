@@ -107,3 +107,23 @@ export type ExperienceId = (typeof experience)[number]['id'];
 export type EducationId = (typeof education)[number]['id'];
 export type SpokenLanguage = (typeof spokenLanguages)[number];
 export type SkillGroup = keyof typeof skills;
+
+export const openSource = [
+  {
+    id: 'parley-ui',
+    name: 'parley-ui',
+    version: '0.1',
+    repo: 'https://github.com/MGHM97/parley-ui',
+    demo: 'https://mghm97.github.io/parley-ui/',
+    stack: ['React', 'TypeScript', 'WAI-ARIA', 'Vitest', 'axe-core', 'Storybook'],
+  },
+] as const satisfies readonly {
+  id: string;
+  name: string;
+  version: string;
+  repo: string;
+  demo: string | null;
+  stack: readonly string[];
+}[];
+
+export type OpenSourceId = (typeof openSource)[number]['id'];

@@ -1,6 +1,7 @@
 import type {
   EducationId,
   ExperienceId,
+  OpenSourceId,
   SkillGroup,
   SpokenLanguage,
   WorkMode,
@@ -19,6 +20,7 @@ export interface Dictionary {
   };
   nav: {
     work: string;
+    openSource: string;
     experience: string;
     skills: string;
     contact: string;
@@ -40,6 +42,13 @@ export interface Dictionary {
     stack: string;
     draft: string;
     fallbackNotice: string;
+  };
+  openSource: {
+    title: string;
+    status: (version: string) => string;
+    source: string;
+    demos: string;
+    projects: Record<OpenSourceId, { tagline: string; description: string; highlights: string[] }>;
   };
   experience: {
     title: string;
@@ -87,6 +96,7 @@ export const en: Dictionary = {
   },
   nav: {
     work: 'Work',
+    openSource: 'Open source',
     experience: 'Experience',
     skills: 'Skills',
     contact: 'Contact',
@@ -109,6 +119,24 @@ export const en: Dictionary = {
     stack: 'Stack',
     draft: 'Draft — hidden in production',
     fallbackNotice: 'This case study is not translated yet, so it is shown in English.',
+  },
+  openSource: {
+    title: 'Open source',
+    status: (version) => `v${version} · in active development`,
+    source: 'Source code',
+    demos: 'Live demos',
+    projects: {
+      'parley-ui': {
+        tagline: 'Accessible React components for AI interfaces',
+        description:
+          'Most AI chat interfaces stream text into a live region and stop there, so screen readers either re-read the whole answer on every token or announce broken fragments. parley-ui is my open-source answer: small, unstyled React components that get the accessibility of AI interfaces right.',
+        highlights: [
+          'StreamingText announces streamed responses one complete sentence at a time instead of flooding screen readers with fragments.',
+          'PromptInput handles Enter, Shift+Enter and Escape, never sends in the middle of an IME composition, and keeps its send button focusable.',
+          '2.2 KB gzipped, strict TypeScript, 31 tests with Testing Library and axe-core, and an accessibility gate in CI.',
+        ],
+      },
+    },
   },
   experience: {
     title: 'Experience',

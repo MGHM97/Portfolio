@@ -14,6 +14,7 @@ export const de: Dictionary = {
   },
   nav: {
     work: 'Projekte',
+    openSource: 'Open Source',
     experience: 'Erfahrung',
     skills: 'Kenntnisse',
     contact: 'Kontakt',
@@ -37,6 +38,24 @@ export const de: Dictionary = {
     draft: 'Entwurf — in Produktion ausgeblendet',
     fallbackNotice:
       'Diese Fallstudie ist noch nicht übersetzt und wird daher auf Englisch angezeigt.',
+  },
+  openSource: {
+    title: 'Open Source',
+    status: (version) => `v${version} · in aktiver Entwicklung`,
+    source: 'Quellcode',
+    demos: 'Live-Demos',
+    projects: {
+      'parley-ui': {
+        tagline: 'Barrierefreie React-Komponenten für KI-Oberflächen',
+        description:
+          'Die meisten KI-Chats streamen Text in eine aria-live-Region und belassen es dabei: Screenreader lesen bei jedem Token die ganze Antwort neu vor oder geben zerstückelte Fragmente aus. parley-ui ist meine Open-Source-Antwort darauf: kleine, ungestylte React-Komponenten, die die Barrierefreiheit von KI-Oberflächen richtig umsetzen.',
+        highlights: [
+          'StreamingText kündigt gestreamte Antworten Satz für Satz an, statt Screenreader mit Fragmenten zu überfluten.',
+          'PromptInput unterstützt Enter, Umschalt+Enter und Escape, sendet nie mitten in einer IME-Eingabe und hält den Senden-Button fokussierbar.',
+          '2,2 KB gzip, striktes TypeScript, 31 Tests mit Testing Library und axe-core sowie eine Barrierefreiheitsprüfung in der CI.',
+        ],
+      },
+    },
   },
   experience: {
     title: 'Erfahrung',
