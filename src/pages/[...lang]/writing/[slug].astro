@@ -13,6 +13,7 @@ import {
   t,
 } from '../../../i18n';
 import { getPosts, readingMinutes } from '../../../lib/posts';
+import { articleSchema, serializeJsonLd } from '../../../lib/structured-data';
 import '../../../styles/prose.css';
 
 export const getStaticPaths = (async () => {
@@ -35,6 +36,15 @@ const { Content } = await render(entry);
 const dict = t(locale);
 const contentLang = isFallback ? languageTags[defaultLocale] : undefined;
 const published = data.published.toISOString().slice(0, 10);
+const schema = articleSchema({
+  title: data.title,
+  description: data.description,
+  published: data.published,
+  updated: data.updated,
+  url: new URL(Astro.url.pathname, Astro.site),
+  contentLocale: isFallback ? defaultLocale : locale,
+  site: Astro.site!,
+});
 ---
 
 <Base
@@ -43,6 +53,7 @@ const published = data.published.toISOString().slice(0, 10);
   description={data.description}
   canonicalLocale={isFallback ? defaultLocale : locale}
 >
+  <script is:inline slot="head" type="application/ld+json" set:html={serializeJsonLd(schema)} />
   <Header locale={locale} />
   <main id="main" class="container">
     <article>

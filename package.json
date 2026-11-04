@@ -13,6 +13,7 @@
     "og": "astro build && node scripts/og.ts"
   },
   "dependencies": {
+    "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.4",
     "astro": "^7.4.5"
   },

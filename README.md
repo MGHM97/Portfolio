@@ -11,6 +11,7 @@ Personal site and portfolio of **Mateus Vieira**, Senior Front-end Engineer buil
 - Playwright + axe-core for end-to-end and WCAG 2.2 AA checks on desktop and mobile, in every locale
 - Content Security Policy with hashed inline scripts and styles
 - Markdown articles with build-time Prism highlighting (no inline styles, so it works under the CSP)
+- JSON-LD (`Person` on every home page, `BlogPosting` on articles) and an RSS feed at `/rss.xml`
 - GitHub Actions for formatting, type checks, build and tests
 
 ## Getting started
