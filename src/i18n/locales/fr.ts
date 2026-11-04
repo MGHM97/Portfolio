@@ -22,7 +22,7 @@ export const fr: Dictionary = {
     role: 'Ingénieur Front-end Senior',
     headline: 'Je conçois des interfaces accessibles et fiables, à grande échelle.',
     summary:
-      'Environ cinq ans à livrer des produits React et TypeScript. Chez HP Inc., je développe des micro-frontends pour une application multiplateforme utilisée sur des millions d’appareils. À l’UFAM, j’ai créé de zéro, en tant que seul ingénieur front-end, la plateforme de données cliniques d’un projet de recherche sur la démence. Je prépare également un master orienté IA.',
+      'Environ cinq ans à livrer des produits React et TypeScript. Chez HP Inc., je développe des micro-frontends pour une application multiplateforme utilisée sur des millions d’appareils. À l’UFAM, j’ai créé de zéro et je dirige le front-end de la plateforme de données cliniques d’un projet de recherche sur la démence. Je prépare également un master orienté IA.',
     availability: 'Ouvert au télétravail et à la relocalisation — Amérique du Nord et Europe',
     location: 'Manaus, Brésil',
     overlap: 'Disponible sur les horaires de la côte Est américaine et des matinées européennes',
@@ -61,7 +61,7 @@ export const fr: Dictionary = {
         role: 'Lead Front-end · Plateforme de recherche clinique',
         note: 'Projet académique à temps partiel',
         highlights: [
-          'Création de zéro, en tant que seul ingénieur front-end, de la plateforme web (React 19, TypeScript, Vite) où médecins, infirmiers et étudiants en médecine enregistrent et suivent plus de 200 patients d’un projet de recherche sur la démence. L’équipe IA du projet construit ses modèles à partir de ces données.',
+          'Création de zéro et direction du front-end (environ 90 % du code) de la plateforme web (React 19, TypeScript, Vite) où médecins, infirmiers et étudiants en médecine enregistrent et suivent plus de 200 patients d’un projet de recherche sur la démence. L’équipe IA du projet construit ses modèles à partir de ces données.',
           'Développement du flux de saisie des données cliniques : 16 formulaires de cas avec champs conditionnels et calcul en temps réel du risque à partir de biomarqueurs (ApoB, Aβ42/40).',
           'Développement de tableaux de bord qui suivent l’évolution de chaque patient, dont les données quotidiennes et horaires issues d’objets connectés (fréquence cardiaque, EDA, PPG, sommeil).',
           'Livraison de l’export des données de recherche (841 champs vers XLSX/CSV), de rapports médicaux en PDF et d’une authentification JWT avec permissions par rôle.',

@@ -95,7 +95,7 @@ export const en: Dictionary = {
     role: 'Senior Front-end Engineer',
     headline: 'I build accessible, reliable interfaces at scale.',
     summary:
-      'About five years building React and TypeScript products. At HP Inc. I ship micro-frontends for a cross-platform app used on millions of devices. At UFAM I built, from scratch and as the only front-end engineer, the clinical data platform behind a dementia research project. I’m also pursuing a master’s with a focus on AI.',
+      'About five years building React and TypeScript products. At HP Inc. I ship micro-frontends for a cross-platform app used on millions of devices. At UFAM I built from scratch, and lead, the front-end of the clinical data platform behind a dementia research project. I’m also pursuing a master’s with a focus on AI.',
     availability: 'Open to remote roles and relocation — North America & Europe',
     location: 'Manaus, Brazil',
     overlap: 'Full overlap with US Eastern and European mornings',
@@ -133,7 +133,7 @@ export const en: Dictionary = {
         role: 'Lead Front-end Engineer · Clinical research platform',
         note: 'Part-time academic project',
         highlights: [
-          'Built from scratch, as the only front-end engineer, the web platform (React 19, TypeScript, Vite) where doctors, nurses and medical students record and follow 200+ patients in a dementia research project. The project’s AI team builds its models on this data.',
+          'Started from scratch and lead the front-end (~90% of the code) of the web platform (React 19, TypeScript, Vite) where doctors, nurses and medical students record and follow 200+ patients in a dementia research project. The project’s AI team builds its models on this data.',
           'Built the clinical data capture workflow: 16 case report forms with conditional fields and real-time biomarker risk calculations (ApoB, Aβ42/40).',
           'Built dashboards that track each patient over time, including daily and hourly wearable data (heart rate, EDA, PPG, sleep).',
           'Delivered research data export (841 fields to XLSX/CSV), PDF medical reports and role-based JWT authentication.',
