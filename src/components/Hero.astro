@@ -1,23 +1,30 @@
 ---
 import { profile } from '../data/profile';
+import { t, type Locale } from '../i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { hero } = t(Astro.props.locale);
 ---
 
 <section class="container hero" aria-labelledby="hero-title">
   <p class="status">
     <span class="dot" aria-hidden="true"></span>
-    {profile.availability}
+    {hero.availability}
   </p>
 
   <h1 id="hero-title">
-    <span class="role">{profile.role}</span>
-    {profile.headline}
+    <span class="role">{hero.role}</span>
+    {hero.headline}
   </h1>
 
-  <p class="summary">{profile.summary}</p>
+  <p class="summary">{hero.summary}</p>
 
   <div class="actions">
     <a class="button primary" href={`mailto:${profile.email}`}>
-      Get in touch
+      {hero.getInTouch}
     </a>
     <a class="button" href={profile.links.linkedin} rel="me">
       LinkedIn
@@ -27,13 +34,13 @@ import { profile } from '../data/profile';
     </a>
     {profile.cv && (
       <a class="button" href={profile.cv} download>
-        Download CV
+        {hero.downloadCv}
       </a>
     )}
   </div>
 
   <p class="meta">
-    {profile.location} · {profile.timezone}
+    {hero.location} · {profile.timezone}
   </p>
 </section>
 

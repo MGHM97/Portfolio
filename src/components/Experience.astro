@@ -1,22 +1,31 @@
 ---
 import { education, experience } from '../data/profile';
+import { t, type Locale } from '../i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { experience: copy } = t(Astro.props.locale);
 ---
 
 <section id="experience" class="container section" aria-labelledby="experience-title">
   <h2 id="experience-title" class="section-title">
-    Experience
+    {copy.title}
   </h2>
 
   <ol role="list" class="timeline">
     {experience.map((job) => (
       <li class="entry">
-        <p class="period">{job.period}</p>
+        <p class="period">
+          {job.start} — {job.end ?? copy.present}
+        </p>
         <div>
           <h3>
-            {job.role} <span class="company">· {job.company}</span>
+            {copy.jobs[job.id].role} <span class="company">· {job.company}</span>
           </h3>
           <ul>
-            {job.highlights.map((item) => (
+            {copy.jobs[job.id].highlights.map((item) => (
               <li>{item}</li>
             ))}
           </ul>
@@ -25,13 +34,13 @@ import { education, experience } from '../data/profile';
     ))}
   </ol>
 
-  <h2 class="section-title education-title">Education</h2>
+  <h2 class="section-title education-title">{copy.educationTitle}</h2>
   <ol role="list" class="timeline">
     {education.map((item) => (
       <li class="entry">
-        <p class="period">{item.period}</p>
+        <p class="period">{item.expected ? copy.expected(item.end) : item.end}</p>
         <h3>
-          {item.degree} <span class="company">· {item.school}</span>
+          {copy.degrees[item.id]} <span class="company">· {item.school}</span>
         </h3>
       </li>
     ))}

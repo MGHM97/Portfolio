@@ -1,32 +1,44 @@
 ---
+import LanguageSwitcher from './LanguageSwitcher.astro';
 import ThemeToggle from './ThemeToggle.astro';
 import { profile } from '../data/profile';
-import { getPublishedWork } from '../lib/work';
+import { localizePath, t, type Locale } from '../i18n';
+import { getWork } from '../lib/work';
 
-const hasWork = (await getPublishedWork()).length > 0;
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const dict = t(locale);
+const home = localizePath(locale);
+const hasWork = (await getWork(locale)).length > 0;
 
 const nav = [
-  ...(hasWork ? [{ href: '/#work', label: 'Work' }] : []),
-  { href: '/#experience', label: 'Experience' },
-  { href: '/#skills', label: 'Skills' },
-  { href: '/#contact', label: 'Contact' },
+  ...(hasWork ? [{ hash: 'work', label: dict.nav.work }] : []),
+  { hash: 'experience', label: dict.nav.experience },
+  { hash: 'skills', label: dict.nav.skills },
+  { hash: 'contact', label: dict.nav.contact },
 ];
 ---
 
 <header class="container header">
-  <a class="brand" href="/">
+  <a class="brand" href={home}>
     {profile.name}
   </a>
-  <nav aria-label="Primary">
+  <nav aria-label={dict.a11y.primaryNav}>
     <ul role="list">
       {nav.map((item) => (
         <li>
-          <a href={item.href}>{item.label}</a>
+          <a href={`${home}#${item.hash}`}>{item.label}</a>
         </li>
       ))}
     </ul>
   </nav>
-  <ThemeToggle />
+  <div class="controls">
+    <LanguageSwitcher locale={locale} />
+    <ThemeToggle label={dict.a11y.toggleTheme} />
+  </div>
 </header>
 
 <style>
@@ -38,7 +50,7 @@ const nav = [
   }
 
   .brand {
-    margin-right: auto;
+    margin-inline-end: auto;
     font-weight: 600;
     text-decoration: none;
   }
@@ -58,7 +70,12 @@ const nav = [
     color: var(--text);
   }
 
-  @media (max-width: 30rem) {
+  .controls {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  @media (max-width: 48rem) {
     nav {
       display: none;
     }

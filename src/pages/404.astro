@@ -1,14 +1,23 @@
 ---
 import Base from '../layouts/Base.astro';
 import Header from '../components/Header.astro';
+import { defaultLocale, languageTags, localizePath, locales, t } from '../i18n';
+
+const dict = t(defaultLocale);
 ---
 
-<Base title="Page not found">
-  <Header />
+<Base locale={defaultLocale} title={dict.notFound.title} alternates={false}>
+  <Header locale={defaultLocale} />
   <main id="main" class="container not-found">
     <p class="code">404</p>
-    <h1>This page doesn't exist.</h1>
-    <a href="/">Back to home</a>
+    <h1>{dict.notFound.heading}</h1>
+    <ul role="list">
+      {locales.map((locale) => (
+        <li lang={languageTags[locale]}>
+          <a href={localizePath(locale)}>{t(locale).notFound.back}</a>
+        </li>
+      ))}
+    </ul>
   </main>
 </Base>
 
@@ -23,5 +32,11 @@ import Header from '../components/Header.astro';
   .code {
     font-family: var(--font-mono);
     color: var(--accent);
+  }
+
+  ul {
+    display: grid;
+    gap: 0.375rem;
+    margin-top: 1rem;
   }
 </style>

@@ -1,31 +1,42 @@
 ---
-import { getPublishedWork } from '../lib/work';
+import { languageTags, localizePath, t, defaultLocale, type Locale } from '../i18n';
+import { getWork } from '../lib/work';
 
-const work = await getPublishedWork();
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const dict = t(locale);
+const work = await getWork(locale);
 ---
 
 {work.length > 0 && (
   <section id="work" class="container section" aria-labelledby="work-title">
     <h2 id="work-title" class="section-title">
-      Selected work
+      {dict.work.title}
     </h2>
 
     <ul role="list" class="cards">
-      {work.map(({ id, data }) => (
-        <li class="card">
+      {work.map(({ slug, entry: { data }, isFallback }) => (
+        <li class="card" lang={isFallback ? languageTags[defaultLocale] : undefined}>
           <p class="meta">
             {data.company} · {data.role}
           </p>
           <h3>
-            <a href={`/work/${id}/`}>{data.title}</a>
+            <a href={localizePath(locale, `/work/${slug}/`)}>{data.title}</a>
           </h3>
           <p class="summary">{data.summary}</p>
-          <ul role="list" class="stack" aria-label="Stack">
+          <ul role="list" class="stack" aria-label={dict.work.stack}>
             {data.stack.map((item) => (
               <li>{item}</li>
             ))}
           </ul>
-          {data.draft && <p class="draft">Draft — hidden in production</p>}
+          {data.draft && (
+            <p class="draft" lang={languageTags[locale]}>
+              {dict.work.draft}
+            </p>
+          )}
         </li>
       ))}
     </ul>

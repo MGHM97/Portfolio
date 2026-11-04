@@ -1,6 +1,12 @@
 ---
 import { profile } from '../data/profile';
+import { t, type Locale } from '../i18n';
 
+interface Props {
+  locale: Locale;
+}
+
+const { footer } = t(Astro.props.locale);
 const year = new Date().getFullYear();
 ---
 
@@ -9,8 +15,8 @@ const year = new Date().getFullYear();
     © {year} {profile.name}
   </p>
   <p>
-    Built with Astro, with <a href="https://claude.com/claude-code">Claude Code</a> as pair
-    programmer. <a href={`${profile.links.github}/Portfolio`}>Source</a>
+    {footer.builtWith} <a href="https://claude.com/claude-code">Claude Code</a>
+    {footer.pairProgrammer} <a href={profile.links.source}>{footer.source}</a>
   </p>
 </footer>
 

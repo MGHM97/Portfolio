@@ -1,16 +1,20 @@
 ---
 import { profile } from '../data/profile';
+import { t, type Locale } from '../i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { contact } = t(Astro.props.locale);
 ---
 
 <section id="contact" class="container section" aria-labelledby="contact-title">
   <h2 id="contact-title" class="section-title">
-    Contact
+    {contact.title}
   </h2>
 
-  <p class="lead">
-    Hiring for a front-end or AI product team? I'm happy to talk about roles, relocation, or how I'd
-    approach your product.
-  </p>
+  <p class="lead">{contact.lead}</p>
 
   <a class="email" href={`mailto:${profile.email}`}>
     {profile.email}

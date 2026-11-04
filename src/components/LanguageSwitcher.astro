@@ -1,0 +1,133 @@
+---
+import {
+  languageTags,
+  localizePath,
+  locales,
+  nativeNames,
+  stripLocale,
+  t,
+  type Locale,
+} from '../i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const path = stripLocale(Astro.url.pathname);
+const shortCode = (target: Locale) => target.split('-')[0]?.toUpperCase();
+---
+
+<details class="language-switcher">
+  <summary>
+    <svg
+      aria-hidden="true"
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+    >
+      <circle cx="12" cy="12" r="9"></circle>
+      <path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"></path>
+    </svg>
+    <span class="visually-hidden">{t(locale).a11y.language}:</span>
+    <span aria-hidden="true">{shortCode(locale)}</span>
+    <span class="visually-hidden">{nativeNames[locale]}</span>
+  </summary>
+  <ul role="list">
+    {locales.map((target) => (
+      <li>
+        <a
+          href={localizePath(target, path)}
+          hreflang={languageTags[target]}
+          lang={languageTags[target]}
+          aria-current={target === locale ? 'true' : undefined}
+        >
+          {nativeNames[target]}
+        </a>
+      </li>
+    ))}
+  </ul>
+</details>
+
+<script>
+  document.addEventListener('click', (event) => {
+    document.querySelectorAll<HTMLDetailsElement>('.language-switcher[open]').forEach((menu) => {
+      if (!menu.contains(event.target as Node)) menu.open = false;
+    });
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key !== 'Escape') return;
+    const menu = document.querySelector<HTMLDetailsElement>('.language-switcher[open]');
+    if (!menu) return;
+    menu.open = false;
+    menu.querySelector('summary')?.focus();
+  });
+</script>
+
+<style>
+  .language-switcher {
+    position: relative;
+  }
+
+  summary {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    height: 2.5rem;
+    padding-inline: 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--muted);
+    cursor: pointer;
+    list-style: none;
+    transition:
+      color 150ms,
+      border-color 150ms;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  summary:hover,
+  [open] > summary {
+    color: var(--text);
+    border-color: var(--muted);
+  }
+
+  ul {
+    position: absolute;
+    inset-inline-end: 0;
+    top: calc(100% + 0.5rem);
+    z-index: 20;
+    min-width: 12rem;
+    padding: 0.375rem;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: 0 8px 24px rgb(0 0 0 / 0.12);
+  }
+
+  a {
+    display: block;
+    padding: 0.5rem 0.75rem;
+    border-radius: calc(var(--radius) - 2px);
+    font-size: 0.9375rem;
+    text-decoration: none;
+  }
+
+  a:hover {
+    background: var(--surface);
+  }
+
+  a[aria-current] {
+    color: var(--accent);
+    font-weight: 600;
+  }
+</style>

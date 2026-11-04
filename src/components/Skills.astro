@@ -1,16 +1,24 @@
 ---
-import { skills } from '../data/profile';
+import { skills, type SkillGroup } from '../data/profile';
+import { t, type Locale } from '../i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { skills: copy } = t(Astro.props.locale);
+const groups = Object.entries(skills) as [SkillGroup, readonly string[]][];
 ---
 
 <section id="skills" class="container section" aria-labelledby="skills-title">
   <h2 id="skills-title" class="section-title">
-    Skills
+    {copy.title}
   </h2>
 
   <dl class="groups">
-    {Object.entries(skills).map(([group, items]) => (
+    {groups.map(([group, items]) => (
       <div class="group">
-        <dt>{group}</dt>
+        <dt>{copy.groups[group]}</dt>
         <dd>
           <ul role="list">
             {items.map((item) => (

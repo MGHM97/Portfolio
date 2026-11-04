@@ -1,61 +1,83 @@
 ---
 import type { GetStaticPaths } from 'astro';
 import { render } from 'astro:content';
-import Base from '../../layouts/Base.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
-import { getPublishedWork } from '../../lib/work';
+import Base from '../../../layouts/Base.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import { defaultLocale, languageTags, localeParams, localizePath, t } from '../../../i18n';
+import { getWork } from '../../../lib/work';
 
 export const getStaticPaths = (async () => {
-  const work = await getPublishedWork();
-  return work.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+  const pages = await Promise.all(
+    localeParams().map(async ({ params, props: { locale } }) => {
+      const work = await getWork(locale);
+      return work.map((item) => ({
+        params: { ...params, slug: item.slug },
+        props: { locale, item },
+      }));
+    }),
+  );
+  return pages.flat();
 }) satisfies GetStaticPaths;
 
-const { entry } = Astro.props;
+const { locale, item } = Astro.props;
+const { entry, isFallback } = item;
 const { data } = entry;
 const { Content } = await render(entry);
+const dict = t(locale);
+const contentLang = isFallback ? languageTags[defaultLocale] : undefined;
 ---
 
-<Base title={`${data.title} — Mateus Vieira`} description={data.summary}>
-  <Header />
+<Base
+  locale={locale}
+  title={`${data.title} — Mateus Vieira`}
+  description={data.summary}
+  canonicalLocale={isFallback ? defaultLocale : locale}
+>
+  <Header locale={locale} />
   <main id="main" class="container">
     <article>
       <header class="intro">
-        <a class="back" href="/#work">
-          ← All work
+        <a class="back" href={`${localizePath(locale)}#work`}>
+          ← {dict.work.allWork}
         </a>
-        <p class="meta">
-          {data.company} · {data.role} · {data.period}
-        </p>
-        <h1>{data.title}</h1>
-        <p class="summary">{data.summary}</p>
+
+        {isFallback && <p class="notice">{dict.work.fallbackNotice}</p>}
+
+        <div lang={contentLang}>
+          <p class="meta">
+            {data.company} · {data.role} · {data.period}
+          </p>
+          <h1>{data.title}</h1>
+          <p class="summary">{data.summary}</p>
+        </div>
 
         <dl class="facts">
           {data.outcomes.length > 0 && (
             <div>
-              <dt>Outcomes</dt>
-              <dd>
+              <dt>{dict.work.outcomes}</dt>
+              <dd lang={contentLang}>
                 <ul>
-                  {data.outcomes.map((item) => (
-                    <li>{item}</li>
+                  {data.outcomes.map((outcome) => (
+                    <li>{outcome}</li>
                   ))}
                 </ul>
               </dd>
             </div>
           )}
           <div>
-            <dt>Stack</dt>
+            <dt>{dict.work.stack}</dt>
             <dd>{data.stack.join(' · ')}</dd>
           </div>
         </dl>
       </header>
 
-      <div class="prose">
+      <div class="prose" lang={contentLang}>
         <Content />
       </div>
     </article>
   </main>
-  <Footer />
+  <Footer locale={locale} />
 </Base>
 
 <style>
@@ -74,6 +96,14 @@ const { Content } = await render(entry);
 
   .back:hover {
     color: var(--text);
+  }
+
+  .notice {
+    margin-bottom: 1.5rem;
+    padding: 0.75rem 1rem;
+    background: var(--accent-soft);
+    border-radius: var(--radius);
+    font-size: 0.9375rem;
   }
 
   .meta {
@@ -116,20 +146,20 @@ const { Content } = await render(entry);
   }
 
   dd ul {
-    padding-left: 1.1rem;
+    padding-inline-start: 1.1rem;
   }
 
   .prose {
     padding-block: 2.5rem 5rem;
   }
 
+  .prose > :global(:first-child) {
+    margin-top: 0;
+  }
+
   .prose :global(h2) {
     margin-top: 3rem;
     font-size: 1.5rem;
-  }
-
-  .prose > :global(:first-child) {
-    margin-top: 0;
   }
 
   .prose :global(h3) {
@@ -155,8 +185,8 @@ const { Content } = await render(entry);
 
   .prose :global(blockquote) {
     margin-top: 1.5rem;
-    padding-left: 1.25rem;
-    border-left: 3px solid var(--accent);
+    padding-inline-start: 1.25rem;
+    border-inline-start: 3px solid var(--accent);
     color: var(--muted);
   }
 </style>

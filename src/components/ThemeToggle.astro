@@ -1,4 +1,12 @@
-<button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
+---
+interface Props {
+  label: string;
+}
+
+const { label } = Astro.props;
+---
+
+<button class="theme-toggle" type="button" aria-label={label} aria-pressed="false">
   <svg
     aria-hidden="true"
     width="18"

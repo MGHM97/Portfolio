@@ -1,29 +1,49 @@
 ---
 import { Font } from 'astro:assets';
 import '../styles/global.css';
-import { profile } from '../data/profile';
+import {
+  defaultLocale,
+  languageTags,
+  localizePath,
+  locales,
+  ogLocales,
+  stripLocale,
+  t,
+  type Locale,
+} from '../i18n';
 
 interface Props {
+  locale: Locale;
   title?: string;
   description?: string;
+  /** Points search engines elsewhere, e.g. to the original of an untranslated page. */
+  canonicalLocale?: Locale;
+  alternates?: boolean;
 }
 
-const {
-  title = `${profile.name} — ${profile.role}`,
-  description = `${profile.headline} ${profile.availability}.`,
-} = Astro.props;
+const { locale, canonicalLocale = locale, alternates = true } = Astro.props;
+const dict = t(locale);
+const title = Astro.props.title ?? dict.meta.title;
+const description = Astro.props.description ?? dict.meta.description;
 
-const canonical = new URL(Astro.url.pathname, Astro.site);
+const path = stripLocale(Astro.url.pathname);
+const urlFor = (target: Locale) => new URL(localizePath(target, path), Astro.site);
+const canonical = urlFor(canonicalLocale);
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={languageTags[locale]}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    {alternates &&
+      locales.map((target) => (
+        <link rel="alternate" hreflang={languageTags[target]} href={urlFor(target)} />
+      ))}
+    {alternates && <link rel="alternate" hreflang="x-default" href={urlFor(defaultLocale)} />}
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="sitemap" href="/sitemap-index.xml" />
 
@@ -31,6 +51,12 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content={ogLocales[locale]} />
+    {locales
+      .filter((target) => target !== locale)
+      .map((target) => (
+        <meta property="og:locale:alternate" content={ogLocales[target]} />
+      ))}
     <meta name="twitter:card" content="summary" />
 
     <meta name="theme-color" content="#fbfaf7" media="(prefers-color-scheme: light)" />
@@ -52,7 +78,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
   </head>
   <body>
     <a class="skip-link" href="#main">
-      Skip to content
+      {dict.a11y.skipToContent}
     </a>
     <slot />
   </body>
@@ -62,7 +88,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
   .skip-link {
     position: absolute;
     top: 0.75rem;
-    left: 0.75rem;
+    inset-inline-start: 0.75rem;
     z-index: 10;
     padding: 0.5rem 0.875rem;
     background: var(--text);
