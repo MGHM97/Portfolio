@@ -113,7 +113,7 @@ export const en: Dictionary = {
     role: 'Senior Front-end Engineer',
     headline: 'I build accessible, reliable interfaces at scale.',
     summary:
-      'About five years building React and TypeScript products. At HP Inc. I ship micro-frontends for a cross-platform app used on millions of devices. At UFAM I built from scratch, and lead, the front-end of the clinical data platform behind a neurodegenerative disease research project. I’m also pursuing a master’s with a focus on AI.',
+      'About five years building React and TypeScript products. At HP Inc. I ship micro-frontends for the HP App, used on millions of devices. At UFAM I built from scratch, and lead, the front-end of the clinical data platform behind a neurodegenerative disease research project. I’m also pursuing a master’s with a focus on AI.',
     availability: 'Open to remote roles and relocation — North America & Europe',
     location: 'Manaus, Brazil',
     overlap: 'Full overlap with US Eastern and European mornings',
@@ -165,11 +165,11 @@ export const en: Dictionary = {
       hp: {
         role: 'Senior Software Engineer',
         highlights: [
-          "Built 12+ production micro-frontends in React and TypeScript for HP's core cross-platform app (Windows, macOS, iOS, Android), used on millions of active devices.",
+          "Built 12+ production micro-frontends in React and TypeScript for the HP App, HP's cross-platform app (Windows, macOS, iOS, Android) where people add and manage their laptops, desktops, monitors and accessories, used on millions of active devices.",
           'Cut cross-team bug resolution time by ~30% with privacy-compliant observability logs for API and native payloads, plus troubleshooting playbooks.',
-          'Architected independent deployment pipelines with SystemJS and import maps, handling runtime loading, versioning and DEV/ITG/PROD rollouts inside the native Windows host.',
+          'Delivered micro-frontends through independent deployment pipelines on SystemJS and import maps, from runtime loading and versioning to DEV/ITG/PROD rollouts inside the native Windows host.',
           'Traced cross-platform regressions from the JavaScript UI through bridge APIs down to native C#/.NET libraries.',
-          'Led the React 16 → 18 upgrade and standardized Jest, Playwright and React Testing Library, keeping ~90% test coverage in GitHub Actions CI.',
+          'Carried out the React 16 → 18 upgrades and standardized Jest, Playwright and React Testing Library, keeping ~90% test coverage in GitHub Actions CI.',
         ],
       },
       ufam: {

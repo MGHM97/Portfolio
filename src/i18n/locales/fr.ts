@@ -24,7 +24,7 @@ export const fr: Dictionary = {
     role: 'Ingénieur Front-end Senior',
     headline: 'Je conçois des interfaces accessibles et fiables, à grande échelle.',
     summary:
-      'Environ cinq ans à livrer des produits React et TypeScript. Chez HP Inc., je développe des micro-frontends pour une application multiplateforme utilisée sur des millions d’appareils. À l’UFAM, j’ai créé de zéro et je dirige le front-end de la plateforme de données cliniques d’un projet de recherche sur les maladies neurodégénératives. Je prépare également un master orienté IA.',
+      'Environ cinq ans à livrer des produits React et TypeScript. Chez HP Inc., je développe des micro-frontends pour la HP App, utilisée sur des millions d’appareils. À l’UFAM, j’ai créé de zéro et je dirige le front-end de la plateforme de données cliniques d’un projet de recherche sur les maladies neurodégénératives. Je prépare également un master orienté IA.',
     availability: 'Ouvert au télétravail et à la relocalisation — Amérique du Nord et Europe',
     location: 'Manaus, Brésil',
     overlap: 'Disponible sur les horaires de la côte Est américaine et des matinées européennes',
@@ -77,11 +77,11 @@ export const fr: Dictionary = {
       hp: {
         role: 'Ingénieur logiciel senior',
         highlights: [
-          'Développement de plus de 12 micro-frontends en production avec React et TypeScript pour l’application multiplateforme principale de HP (Windows, macOS, iOS, Android), utilisée sur des millions d’appareils actifs.',
+          'Développement de plus de 12 micro-frontends en production avec React et TypeScript pour la HP App, l’application multiplateforme de HP (Windows, macOS, iOS, Android) où les utilisateurs ajoutent et gèrent leurs ordinateurs portables et de bureau, écrans et accessoires, utilisée sur des millions d’appareils actifs.',
           'Réduction d’environ 30 % du temps de résolution des bugs entre équipes grâce à des logs d’observabilité respectueux de la vie privée pour les payloads API et natifs, accompagnés de guides de diagnostic.',
-          'Conception de pipelines de déploiement indépendants avec SystemJS et les import maps, gérant le chargement à l’exécution, le versionnage et les déploiements DEV/ITG/PROD dans l’hôte Windows natif.',
+          'Livraison de micro-frontends via des pipelines de déploiement indépendants reposant sur SystemJS et les import maps, du chargement à l’exécution et du versionnage jusqu’aux déploiements DEV/ITG/PROD dans l’hôte Windows natif.',
           'Analyse de régressions multiplateformes depuis l’interface JavaScript, à travers les bridge APIs, jusqu’aux bibliothèques natives C#/.NET.',
-          'Pilotage de la migration de React 16 à 18 et standardisation de Jest, Playwright et React Testing Library, avec une couverture de tests d’environ 90 % dans la CI GitHub Actions.',
+          'Réalisation des migrations de React 16 à 18 et standardisation de Jest, Playwright et React Testing Library, avec une couverture de tests d’environ 90 % dans la CI GitHub Actions.',
         ],
       },
       ufam: {

@@ -24,8 +24,6 @@ There is no AI in the interface itself. The AI team reads what clinicians enter 
 
 Besides the forms, the platform covers patient registration, visit scheduling, follow-up and data-extraction reports, and an admin area for users, profiles and the devices used in the study. The interface is available in Portuguese and English.
 
-<!-- TODO: confirm with the project what can be disclosed publicly before publishing. -->
-
 ## The problem
 
 The clinical team needed one place to register patients, run assessments and follow each patient over time. That meant:
@@ -60,7 +58,7 @@ The people using the platform are doctors and nurses in the middle of a study, n
 
 So the platform has its own change-request screen. A clinician describes the adjustment they need, attaches a screenshot or PDF when it's something visual, and sees an estimated delivery date for it. For anything urgent, they can still message the team directly. Most improvements to the forms came through this loop.
 
-<!-- TODO: optional — a rough number (requests handled, typical turnaround) if you can share it. -->
+The screen is still new, and clinicians have already used it for around eight requests.
 
 ### Getting data out safely
 
@@ -73,8 +71,6 @@ Researchers needed everything in spreadsheets, so I delivered an export of 841 f
 - A direct channel for clinicians to request changes, with a visible delivery estimate
 - A clean, exportable dataset that the AI team builds on
 
-<!-- TODO: any result you can share — fewer data-entry errors, time saved per assessment, feedback from clinicians. -->
+## What I learned
 
-## What I'd do differently
-
-<!-- TODO: one honest lesson. -->
+Healthcare was never a field I expected to work in. It turned out the same skills apply: understand who uses the screen, make the right thing the easy thing, and keep the data clean. Web development can bring something new and useful to almost any domain, and that's a big part of why I enjoy this project.

@@ -87,6 +87,7 @@ export const skills = {
     'single-spa',
     'SystemJS',
     'Import maps',
+    'Feature flags',
     'Design systems',
     'WCAG 2.2',
   ],

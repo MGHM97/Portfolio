@@ -24,7 +24,7 @@ export const ptBr: Dictionary = {
     role: 'Engenheiro Front-end Sênior',
     headline: 'Construo interfaces acessíveis e confiáveis em grande escala.',
     summary:
-      'Cerca de cinco anos construindo produtos com React e TypeScript. Na HP Inc., desenvolvo micro-frontends para um app multiplataforma usado em milhões de dispositivos. Na UFAM, criei do zero e lidero o front-end da plataforma de dados clínicos de um projeto de pesquisa sobre doenças neurodegenerativas. Também faço mestrado com ênfase em IA.',
+      'Cerca de cinco anos construindo produtos com React e TypeScript. Na HP Inc., desenvolvo micro-frontends para o HP App, usado em milhões de dispositivos. Na UFAM, criei do zero e lidero o front-end da plataforma de dados clínicos de um projeto de pesquisa sobre doenças neurodegenerativas. Também faço mestrado com ênfase em IA.',
     availability: 'Aberto a vagas remotas e realocação — América do Norte e Europa',
     location: 'Manaus, Brasil',
     overlap: 'Horário compatível com a costa leste dos EUA e com as manhãs na Europa',
@@ -76,11 +76,11 @@ export const ptBr: Dictionary = {
       hp: {
         role: 'Engenheiro de Software Sênior',
         highlights: [
-          'Desenvolvi mais de 12 micro-frontends em produção com React e TypeScript para o principal app multiplataforma da HP (Windows, macOS, iOS, Android), usado em milhões de dispositivos ativos.',
+          'Desenvolvi mais de 12 micro-frontends em produção com React e TypeScript para o HP App, o app multiplataforma da HP (Windows, macOS, iOS, Android) em que as pessoas adicionam e gerenciam seus notebooks, desktops, monitores e acessórios, usado em milhões de dispositivos ativos.',
           'Acelerei em ~30% a resolução de bugs entre times com logs de observabilidade que respeitam a privacidade, expondo payloads de API e nativos, e playbooks de troubleshooting.',
-          'Arquitetei pipelines de deploy independentes com SystemJS e import maps, cuidando do carregamento em tempo de execução, versionamento e rollouts DEV/ITG/PROD dentro do host nativo Windows.',
+          'Entreguei micro-frontends por pipelines de deploy independentes baseados em SystemJS e import maps, do carregamento em tempo de execução e versionamento até os rollouts DEV/ITG/PROD dentro do host nativo Windows.',
           'Rastreei regressões multiplataforma desde a interface em JavaScript, passando pelas bridge APIs, até as bibliotecas nativas em C#/.NET.',
-          'Liderei a migração do React 16 para o 18 e padronizei Jest, Playwright e React Testing Library, mantendo ~90% de cobertura de testes no CI com GitHub Actions.',
+          'Executei as migrações do React 16 para o 18 e padronizei Jest, Playwright e React Testing Library, mantendo ~90% de cobertura de testes no CI com GitHub Actions.',
         ],
       },
       ufam: {
