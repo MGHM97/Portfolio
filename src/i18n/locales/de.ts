@@ -24,7 +24,7 @@ export const de: Dictionary = {
     role: 'Senior Frontend Engineer',
     headline: 'Ich entwickle barrierefreie, zuverlässige Oberflächen für den großen Maßstab.',
     summary:
-      'Rund fünf Jahre Erfahrung mit React- und TypeScript-Produkten. Bei HP Inc. entwickle ich Micro-Frontends für eine plattformübergreifende App, die auf Millionen von Geräten läuft. An der UFAM habe ich das Frontend der klinischen Datenplattform eines Demenz-Forschungsprojekts von Grund auf aufgebaut und leite es. Daneben absolviere ich einen Master mit KI-Schwerpunkt.',
+      'Rund fünf Jahre Erfahrung mit React- und TypeScript-Produkten. Bei HP Inc. entwickle ich Micro-Frontends für eine plattformübergreifende App, die auf Millionen von Geräten läuft. An der UFAM habe ich das Frontend der klinischen Datenplattform eines Forschungsprojekts zu neurodegenerativen Erkrankungen von Grund auf aufgebaut und leite es. Daneben absolviere ich einen Master mit KI-Schwerpunkt.',
     availability: 'Offen für Remote-Stellen und Relocation — Nordamerika und Europa',
     location: 'Manaus, Brasilien',
     overlap: 'Volle Überschneidung mit der US-Ostküste und dem europäischen Vormittag',
@@ -89,10 +89,11 @@ export const de: Dictionary = {
         role: 'Lead Frontend Engineer · Klinische Forschungsplattform',
         note: 'Akademisches Projekt in Teilzeit',
         highlights: [
-          'Frontend der Webplattform (React 19, TypeScript, Vite) von Grund auf aufgebaut und geleitet (rund 90 % des Codes), in der Ärzte, Pflegekräfte und Medizinstudierende über 200 Patientinnen und Patienten eines Demenz-Forschungsprojekts erfassen und begleiten. Das KI-Team des Projekts trainiert seine Modelle mit diesen Daten.',
-          'Erfassung klinischer Daten umgesetzt: 16 Prüfbögen (Case Report Forms) mit bedingten Feldern und Risikoberechnung anhand von Biomarkern in Echtzeit (ApoB, Aβ42/40).',
-          'Dashboards entwickelt, die den Verlauf jeder Patientin und jedes Patienten zeigen, einschließlich täglicher und stündlicher Wearable-Daten (Herzfrequenz, EDA, PPG, Schlaf).',
+          'Frontend der Webplattform (React 19, TypeScript, Vite) von Grund auf aufgebaut und geleitet (rund 90 % des Codes), in der Ärzte, Pflegekräfte und Medizinstudierende über 200 Patientinnen und Patienten eines Forschungsprojekts zu neurodegenerativen Erkrankungen erfassen und begleiten. Das KI-Team des Projekts trainiert seine Modelle mit diesen Daten.',
+          'Erfassung klinischer Daten umgesetzt: 16 Prüfbögen (Case Report Forms) mit bedingten Feldern und in Echtzeit berechneten Risikowerten.',
+          'Dashboards entwickelt, die den Verlauf jeder Patientin und jedes Patienten zeigen, einschließlich Daten von Wearables.',
           'Export der Forschungsdaten (841 Felder nach XLSX/CSV), medizinische PDF-Berichte und JWT-Authentifizierung mit rollenbasierten Berechtigungen geliefert.',
+          'Änderungsanfragen direkt in der Plattform umgesetzt: Das Fachpersonal beschreibt, was es braucht, hängt Screenshots oder PDFs an und sieht ein voraussichtliches Lieferdatum.',
         ],
       },
       ipdec: {

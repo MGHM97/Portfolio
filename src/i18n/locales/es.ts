@@ -24,7 +24,7 @@ export const es: Dictionary = {
     role: 'Ingeniero Front-end Sénior',
     headline: 'Construyo interfaces accesibles y fiables a gran escala.',
     summary:
-      'Unos cinco años creando productos con React y TypeScript. En HP Inc. desarrollo micro-frontends para una aplicación multiplataforma usada en millones de dispositivos. En la UFAM creé desde cero, y lidero, el front-end de la plataforma de datos clínicos de un proyecto de investigación sobre demencia. Además, curso un máster con enfoque en IA.',
+      'Unos cinco años creando productos con React y TypeScript. En HP Inc. desarrollo micro-frontends para una aplicación multiplataforma usada en millones de dispositivos. En la UFAM creé desde cero, y lidero, el front-end de la plataforma de datos clínicos de un proyecto de investigación sobre enfermedades neurodegenerativas. Además, curso un máster con enfoque en IA.',
     availability: 'Disponible para trabajo remoto y reubicación — Norteamérica y Europa',
     location: 'Manaos, Brasil',
     overlap: 'Coincidencia horaria total con la costa este de EE. UU. y las mañanas europeas',
@@ -87,10 +87,11 @@ export const es: Dictionary = {
         role: 'Líder de Front-end · Plataforma de investigación clínica',
         note: 'Proyecto académico a tiempo parcial',
         highlights: [
-          'Creé desde cero y lidero el front-end (~90 % del código) de la plataforma web (React 19, TypeScript, Vite) en la que médicos, enfermeros y estudiantes de medicina registran y siguen a más de 200 pacientes de un proyecto de investigación sobre demencia. El equipo de IA del proyecto entrena sus modelos con estos datos.',
-          'Desarrollé el flujo de captura de datos clínicos: 16 formularios de caso con campos condicionales y cálculo de riesgo por biomarcadores en tiempo real (ApoB, Aβ42/40).',
-          'Desarrollé paneles que muestran la evolución de cada paciente, incluidos datos diarios y por hora de wearables (frecuencia cardíaca, EDA, PPG, sueño).',
+          'Creé desde cero y lidero el front-end (~90 % del código) de la plataforma web (React 19, TypeScript, Vite) en la que médicos, enfermeros y estudiantes de medicina registran y siguen a más de 200 pacientes de un proyecto de investigación sobre enfermedades neurodegenerativas. El equipo de IA del proyecto entrena sus modelos con estos datos.',
+          'Desarrollé el flujo de captura de datos clínicos: 16 formularios de caso con campos condicionales y puntuaciones de riesgo calculadas en tiempo real.',
+          'Desarrollé paneles que muestran la evolución de cada paciente, incluidos datos de dispositivos wearables.',
           'Entregué la exportación de datos de investigación (841 campos a XLSX/CSV), informes médicos en PDF y autenticación JWT con permisos por rol.',
+          'Desarrollé el flujo de solicitudes de ajuste dentro de la plataforma: los profesionales describen lo que necesitan, adjuntan capturas o PDF y ven una fecha estimada de entrega.',
         ],
       },
       ipdec: {

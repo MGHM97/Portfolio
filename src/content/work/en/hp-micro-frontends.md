@@ -34,11 +34,11 @@ Two things slowed teams down.
 
 ## What I did
 
-### Independent deployments with SystemJS and import maps
+### Independent deployments on SystemJS and import maps
 
-I designed deployment pipelines where each micro-frontend is built, versioned and promoted independently. The host resolves modules at runtime through import maps and SystemJS, so rolling a micro-frontend forward or back means changing which version the map points to instead of rebuilding the host.
+The platform loads micro-frontends at runtime with SystemJS and import maps, an architecture that was in place before I joined. Working within it, I designed deployment pipelines where each micro-frontend is built, versioned and promoted on its own. Because the host resolves modules through the import map, rolling a micro-frontend forward or back means changing which version the map points to instead of rebuilding the host.
 
-<!-- TODO: why SystemJS over Module Federation? (e.g. host constraints, existing single-spa setup) -->
+<!-- TODO: confirm this matches your part — you built/own these pipelines (per your CV), on top of the existing SystemJS setup. -->
 
 ### Observability that respects privacy
 
