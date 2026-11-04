@@ -2,8 +2,29 @@ import { defineConfig, fontProviders } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import { defaultLocale, languageTags, locales } from './src/i18n/config.ts';
 
+// SITE_URL wins once a custom domain exists; until then Vercel's production
+// URL keeps canonical links, hreflang and the sitemap pointing somewhere real.
+const site =
+  process.env.SITE_URL ??
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : 'http://localhost:4321');
+
 export default defineConfig({
-  site: 'https://mateusvieira.dev',
+  site,
+  security: {
+    csp: {
+      directives: [
+        "default-src 'self'",
+        "img-src 'self' data:",
+        "font-src 'self'",
+        "connect-src 'self'",
+        "base-uri 'self'",
+        "form-action 'none'",
+        "object-src 'none'",
+      ],
+    },
+  },
   i18n: {
     locales: [...locales],
     defaultLocale,

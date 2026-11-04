@@ -29,6 +29,7 @@ const description = Astro.props.description ?? dict.meta.description;
 const path = stripLocale(Astro.url.pathname);
 const urlFor = (target: Locale) => new URL(localizePath(target, path), Astro.site);
 const canonical = urlFor(canonicalLocale);
+const ogImage = new URL(`/og/${locale}.png`, Astro.site);
 ---
 
 <!doctype html>
@@ -57,7 +58,12 @@ const canonical = urlFor(canonicalLocale);
       .map((target) => (
         <meta property="og:locale:alternate" content={ogLocales[target]} />
       ))}
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={`${dict.hero.role} — ${dict.hero.headline}`} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={ogImage} />
 
     <meta name="theme-color" content="#fbfaf7" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#121211" media="(prefers-color-scheme: dark)" />
