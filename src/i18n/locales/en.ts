@@ -77,7 +77,7 @@ export const en: Dictionary = {
   meta: {
     title: 'Mateus Vieira — Senior Front-end Engineer',
     description:
-      'Senior Front-end Engineer building accessible, AI-powered interfaces at scale. React, TypeScript and micro-frontends. Open to remote roles and relocation in North America and Europe.',
+      'Senior Front-end Engineer building accessible, reliable interfaces at scale with React, TypeScript and micro-frontends. Open to remote roles and relocation in North America and Europe.',
   },
   a11y: {
     skipToContent: 'Skip to content',
@@ -93,9 +93,9 @@ export const en: Dictionary = {
   },
   hero: {
     role: 'Senior Front-end Engineer',
-    headline: 'I build accessible, AI‑powered interfaces at scale.',
+    headline: 'I build accessible, reliable interfaces at scale.',
     summary:
-      'About five years building React and TypeScript products. At HP Inc. I ship micro-frontends for a cross-platform app used on millions of devices. At UFAM I lead the front-end of an AI platform that helps clinicians predict dementia progression.',
+      'About five years building React and TypeScript products. At HP Inc. I ship micro-frontends for a cross-platform app used on millions of devices. At UFAM I built, from scratch and as the only front-end engineer, the clinical data platform behind a dementia research project. I’m also pursuing a master’s with a focus on AI.',
     availability: 'Open to remote roles and relocation — North America & Europe',
     location: 'Manaus, Brazil',
     overlap: 'Full overlap with US Eastern and European mornings',
@@ -130,12 +130,12 @@ export const en: Dictionary = {
         ],
       },
       ufam: {
-        role: 'Lead Front-end Engineer · AI Healthcare R&D',
+        role: 'Lead Front-end Engineer · Clinical research platform',
         note: 'Part-time academic project',
         highlights: [
-          'Lead the front-end architecture (React 19, TypeScript, Vite) of an AI and web platform that monitors 200+ patients and helps doctors and nurses predict dementia progression.',
+          'Built from scratch, as the only front-end engineer, the web platform (React 19, TypeScript, Vite) where doctors, nurses and medical students record and follow 200+ patients in a dementia research project. The project’s AI team builds its models on this data.',
           'Built the clinical data capture workflow: 16 case report forms with conditional fields and real-time biomarker risk calculations (ApoB, Aβ42/40).',
-          'Built a wearable-data dashboard (heart rate, EDA, PPG, sleep) used to validate AI datasets.',
+          'Built dashboards that track each patient over time, including daily and hourly wearable data (heart rate, EDA, PPG, sleep).',
           'Delivered research data export (841 fields to XLSX/CSV), PDF medical reports and role-based JWT authentication.',
         ],
       },

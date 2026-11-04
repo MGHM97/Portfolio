@@ -4,7 +4,7 @@ export const fr: Dictionary = {
   meta: {
     title: 'Mateus Vieira — Ingénieur Front-end Senior',
     description:
-      'Ingénieur Front-end Senior qui conçoit des interfaces accessibles et propulsées par l’IA, à grande échelle. React, TypeScript et micro-frontends. Ouvert au télétravail et à la relocalisation en Amérique du Nord et en Europe.',
+      'Ingénieur Front-end Senior qui conçoit des interfaces accessibles et fiables, à grande échelle, avec React, TypeScript et les micro-frontends. Ouvert au télétravail et à la relocalisation en Amérique du Nord et en Europe.',
   },
   a11y: {
     skipToContent: 'Aller au contenu',
@@ -20,9 +20,9 @@ export const fr: Dictionary = {
   },
   hero: {
     role: 'Ingénieur Front-end Senior',
-    headline: 'Je conçois des interfaces accessibles et propulsées par l’IA, à grande échelle.',
+    headline: 'Je conçois des interfaces accessibles et fiables, à grande échelle.',
     summary:
-      'Environ cinq ans à livrer des produits React et TypeScript. Chez HP Inc., je développe des micro-frontends pour une application multiplateforme utilisée sur des millions d’appareils. À l’UFAM, je dirige le front-end d’une plateforme d’IA qui aide les soignants à prédire l’évolution de la démence.',
+      'Environ cinq ans à livrer des produits React et TypeScript. Chez HP Inc., je développe des micro-frontends pour une application multiplateforme utilisée sur des millions d’appareils. À l’UFAM, j’ai créé de zéro, en tant que seul ingénieur front-end, la plateforme de données cliniques d’un projet de recherche sur la démence. Je prépare également un master orienté IA.',
     availability: 'Ouvert au télétravail et à la relocalisation — Amérique du Nord et Europe',
     location: 'Manaus, Brésil',
     overlap: 'Disponible sur les horaires de la côte Est américaine et des matinées européennes',
@@ -58,12 +58,12 @@ export const fr: Dictionary = {
         ],
       },
       ufam: {
-        role: 'Lead Front-end · R&D santé et IA',
+        role: 'Lead Front-end · Plateforme de recherche clinique',
         note: 'Projet académique à temps partiel',
         highlights: [
-          'Direction de l’architecture front-end (React 19, TypeScript, Vite) d’une plateforme web et IA qui suit plus de 200 patients et aide médecins et infirmiers à prédire l’évolution de la démence.',
+          'Création de zéro, en tant que seul ingénieur front-end, de la plateforme web (React 19, TypeScript, Vite) où médecins, infirmiers et étudiants en médecine enregistrent et suivent plus de 200 patients d’un projet de recherche sur la démence. L’équipe IA du projet construit ses modèles à partir de ces données.',
           'Développement du flux de saisie des données cliniques : 16 formulaires de cas avec champs conditionnels et calcul en temps réel du risque à partir de biomarqueurs (ApoB, Aβ42/40).',
-          'Développement d’un tableau de bord de données issues d’objets connectés (fréquence cardiaque, EDA, PPG, sommeil) pour valider les jeux de données d’IA.',
+          'Développement de tableaux de bord qui suivent l’évolution de chaque patient, dont les données quotidiennes et horaires issues d’objets connectés (fréquence cardiaque, EDA, PPG, sommeil).',
           'Livraison de l’export des données de recherche (841 champs vers XLSX/CSV), de rapports médicaux en PDF et d’une authentification JWT avec permissions par rôle.',
         ],
       },

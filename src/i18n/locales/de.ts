@@ -4,7 +4,7 @@ export const de: Dictionary = {
   meta: {
     title: 'Mateus Vieira — Senior Frontend Engineer',
     description:
-      'Senior Frontend Engineer für barrierefreie, KI-gestützte Benutzeroberflächen im großen Maßstab. React, TypeScript und Micro-Frontends. Offen für Remote-Stellen und Relocation in Nordamerika und Europa.',
+      'Senior Frontend Engineer für barrierefreie, zuverlässige Benutzeroberflächen im großen Maßstab mit React, TypeScript und Micro-Frontends. Offen für Remote-Stellen und Relocation in Nordamerika und Europa.',
   },
   a11y: {
     skipToContent: 'Zum Inhalt springen',
@@ -20,9 +20,9 @@ export const de: Dictionary = {
   },
   hero: {
     role: 'Senior Frontend Engineer',
-    headline: 'Ich entwickle barrierefreie, KI‑gestützte Oberflächen für den großen Maßstab.',
+    headline: 'Ich entwickle barrierefreie, zuverlässige Oberflächen für den großen Maßstab.',
     summary:
-      'Rund fünf Jahre Erfahrung mit React- und TypeScript-Produkten. Bei HP Inc. entwickle ich Micro-Frontends für eine plattformübergreifende App, die auf Millionen von Geräten läuft. An der UFAM leite ich das Frontend einer KI-Plattform, die medizinischem Fachpersonal hilft, den Verlauf von Demenz vorherzusagen.',
+      'Rund fünf Jahre Erfahrung mit React- und TypeScript-Produkten. Bei HP Inc. entwickle ich Micro-Frontends für eine plattformübergreifende App, die auf Millionen von Geräten läuft. An der UFAM habe ich als einziger Frontend-Entwickler die klinische Datenplattform eines Demenz-Forschungsprojekts von Grund auf aufgebaut. Daneben absolviere ich einen Master mit KI-Schwerpunkt.',
     availability: 'Offen für Remote-Stellen und Relocation — Nordamerika und Europa',
     location: 'Manaus, Brasilien',
     overlap: 'Volle Überschneidung mit der US-Ostküste und dem europäischen Vormittag',
@@ -58,12 +58,12 @@ export const de: Dictionary = {
         ],
       },
       ufam: {
-        role: 'Lead Frontend Engineer · KI-Forschung im Gesundheitswesen',
+        role: 'Lead Frontend Engineer · Klinische Forschungsplattform',
         note: 'Akademisches Projekt in Teilzeit',
         highlights: [
-          'Leitung der Frontend-Architektur (React 19, TypeScript, Vite) einer KI- und Webplattform, die über 200 Patientinnen und Patienten begleitet und Ärzten und Pflegekräften hilft, den Verlauf von Demenz vorherzusagen.',
+          'Als einziger Frontend-Entwickler die Webplattform (React 19, TypeScript, Vite) von Grund auf aufgebaut, in der Ärzte, Pflegekräfte und Medizinstudierende über 200 Patientinnen und Patienten eines Demenz-Forschungsprojekts erfassen und begleiten. Das KI-Team des Projekts trainiert seine Modelle mit diesen Daten.',
           'Erfassung klinischer Daten umgesetzt: 16 Prüfbögen (Case Report Forms) mit bedingten Feldern und Risikoberechnung anhand von Biomarkern in Echtzeit (ApoB, Aβ42/40).',
-          'Dashboard für Wearable-Daten (Herzfrequenz, EDA, PPG, Schlaf) zur Validierung der KI-Datensätze entwickelt.',
+          'Dashboards entwickelt, die den Verlauf jeder Patientin und jedes Patienten zeigen, einschließlich täglicher und stündlicher Wearable-Daten (Herzfrequenz, EDA, PPG, Schlaf).',
           'Export der Forschungsdaten (841 Felder nach XLSX/CSV), medizinische PDF-Berichte und JWT-Authentifizierung mit rollenbasierten Berechtigungen geliefert.',
         ],
       },

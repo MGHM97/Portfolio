@@ -4,7 +4,7 @@ export const ptBr: Dictionary = {
   meta: {
     title: 'Mateus Vieira — Engenheiro Front-end Sênior',
     description:
-      'Engenheiro Front-end Sênior que constrói interfaces acessíveis e com IA em grande escala. React, TypeScript e micro-frontends. Aberto a vagas remotas e realocação para a América do Norte e a Europa.',
+      'Engenheiro Front-end Sênior que constrói interfaces acessíveis e confiáveis em grande escala com React, TypeScript e micro-frontends. Aberto a vagas remotas e realocação para a América do Norte e a Europa.',
   },
   a11y: {
     skipToContent: 'Pular para o conteúdo',
@@ -20,9 +20,9 @@ export const ptBr: Dictionary = {
   },
   hero: {
     role: 'Engenheiro Front-end Sênior',
-    headline: 'Construo interfaces acessíveis e com IA em grande escala.',
+    headline: 'Construo interfaces acessíveis e confiáveis em grande escala.',
     summary:
-      'Cerca de cinco anos construindo produtos com React e TypeScript. Na HP Inc., desenvolvo micro-frontends para um app multiplataforma usado em milhões de dispositivos. Na UFAM, lidero o front-end de uma plataforma de IA que ajuda profissionais de saúde a prever a progressão da demência.',
+      'Cerca de cinco anos construindo produtos com React e TypeScript. Na HP Inc., desenvolvo micro-frontends para um app multiplataforma usado em milhões de dispositivos. Na UFAM, construí do zero, como único engenheiro front-end, a plataforma de dados clínicos de um projeto de pesquisa sobre demência. Também faço mestrado com ênfase em IA.',
     availability: 'Aberto a vagas remotas e realocação — América do Norte e Europa',
     location: 'Manaus, Brasil',
     overlap: 'Horário compatível com a costa leste dos EUA e com as manhãs na Europa',
@@ -57,12 +57,12 @@ export const ptBr: Dictionary = {
         ],
       },
       ufam: {
-        role: 'Líder de Front-end · P&D em saúde com IA',
+        role: 'Líder de Front-end · Plataforma de pesquisa clínica',
         note: 'Projeto acadêmico em meio período',
         highlights: [
-          'Lidero a arquitetura front-end (React 19, TypeScript, Vite) de uma plataforma web com IA que acompanha mais de 200 pacientes e ajuda médicos e enfermeiros a prever a progressão da demência.',
+          'Construí do zero, como único engenheiro front-end, a plataforma web (React 19, TypeScript, Vite) onde médicos, enfermeiros e estudantes de medicina cadastram e acompanham mais de 200 pacientes de um projeto de pesquisa sobre demência. O time de IA do projeto constrói seus modelos a partir desses dados.',
           'Desenvolvi o fluxo de captura de dados clínicos: 16 fichas clínicas (CRFs) com campos condicionais e cálculo de risco por biomarcadores em tempo real (ApoB, Aβ42/40).',
-          'Desenvolvi um dashboard de dados de wearables (frequência cardíaca, EDA, PPG, sono) usado para validar os datasets de IA.',
+          'Desenvolvi dashboards que acompanham a evolução de cada paciente, incluindo dados diários e por hora de wearables (frequência cardíaca, EDA, PPG, sono).',
           'Entreguei a exportação de dados de pesquisa (841 campos para XLSX/CSV), laudos médicos em PDF e autenticação JWT com permissões por perfil.',
         ],
       },
