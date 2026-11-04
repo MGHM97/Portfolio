@@ -1,0 +1,95 @@
+---
+import { getPublishedWork } from '../lib/work';
+
+const work = await getPublishedWork();
+---
+
+{work.length > 0 && (
+  <section id="work" class="container section" aria-labelledby="work-title">
+    <h2 id="work-title" class="section-title">
+      Selected work
+    </h2>
+
+    <ul role="list" class="cards">
+      {work.map(({ id, data }) => (
+        <li class="card">
+          <p class="meta">
+            {data.company} · {data.role}
+          </p>
+          <h3>
+            <a href={`/work/${id}/`}>{data.title}</a>
+          </h3>
+          <p class="summary">{data.summary}</p>
+          <ul role="list" class="stack" aria-label="Stack">
+            {data.stack.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+          {data.draft && <p class="draft">Draft — hidden in production</p>}
+        </li>
+      ))}
+    </ul>
+  </section>
+)}
+
+<style>
+  .cards {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .card {
+    position: relative;
+    padding: 1.5rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: border-color 150ms;
+  }
+
+  .card:hover,
+  .card:focus-within {
+    border-color: var(--muted);
+  }
+
+  .meta {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--muted);
+  }
+
+  h3 {
+    margin-top: 0.5rem;
+    font-size: 1.25rem;
+  }
+
+  h3 a {
+    text-decoration: none;
+  }
+
+  h3 a::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+  }
+
+  .summary {
+    margin-top: 0.5rem;
+    color: var(--muted);
+  }
+
+  .stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    margin-top: 1rem;
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+  }
+
+  .draft {
+    margin-top: 1rem;
+    font-size: 0.8125rem;
+    color: var(--accent);
+  }
+</style>

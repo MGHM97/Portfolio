@@ -1,11 +1,15 @@
 ---
 import ThemeToggle from './ThemeToggle.astro';
 import { profile } from '../data/profile';
+import { getPublishedWork } from '../lib/work';
+
+const hasWork = (await getPublishedWork()).length > 0;
 
 const nav = [
-  { href: '#experience', label: 'Experience' },
-  { href: '#skills', label: 'Skills' },
-  { href: '#contact', label: 'Contact' },
+  ...(hasWork ? [{ href: '/#work', label: 'Work' }] : []),
+  { href: '/#experience', label: 'Experience' },
+  { href: '/#skills', label: 'Skills' },
+  { href: '/#contact', label: 'Contact' },
 ];
 ---
 
