@@ -11,6 +11,7 @@ export const de: Dictionary = {
     primaryNav: 'Hauptnavigation',
     toggleTheme: 'Dunkelmodus umschalten',
     language: 'Sprache',
+    menu: 'Menü',
   },
   nav: {
     work: 'Projekte',

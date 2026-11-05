@@ -17,6 +17,7 @@ export interface Dictionary {
     primaryNav: string;
     toggleTheme: string;
     language: string;
+    menu: string;
   };
   nav: {
     work: string;
@@ -101,6 +102,7 @@ export const en: Dictionary = {
     primaryNav: 'Primary',
     toggleTheme: 'Toggle dark mode',
     language: 'Language',
+    menu: 'Menu',
   },
   nav: {
     work: 'Work',

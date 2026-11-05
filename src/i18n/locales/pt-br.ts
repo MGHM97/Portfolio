@@ -11,6 +11,7 @@ export const ptBr: Dictionary = {
     primaryNav: 'Principal',
     toggleTheme: 'Alternar modo escuro',
     language: 'Idioma',
+    menu: 'Menu',
   },
   nav: {
     work: 'Projetos',
