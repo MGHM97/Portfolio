@@ -133,8 +133,9 @@ export const ptBr: Dictionary = {
     lead: 'Contratando para um time de front-end ou de produto com IA? Vamos conversar sobre vagas, realocação ou sobre como eu abordaria o seu produto.',
   },
   footer: {
-    builtWith: 'Feito com Astro, com',
-    pairProgrammer: 'como pair programmer.',
+    creditBefore:
+      'Projetado e desenvolvido por Mateus Vieira, com desenvolvimento assistido por IA (',
+    creditAfter: ').',
     source: 'Código-fonte',
   },
   notFound: {

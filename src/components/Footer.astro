@@ -15,8 +15,9 @@ const year = new Date().getFullYear();
     © {year} {profile.name}
   </p>
   <p>
-    {footer.builtWith} <a href="https://claude.com/claude-code">Claude Code</a>
-    {footer.pairProgrammer} <a href={profile.links.source}>{footer.source}</a>
+    {footer.creditBefore}
+    <a href="https://claude.com/claude-code">Claude Code</a>
+    {footer.creditAfter} <a href={profile.links.source}>{footer.source}</a>
   </p>
 </footer>
 

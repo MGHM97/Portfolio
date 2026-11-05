@@ -133,8 +133,8 @@ export const es: Dictionary = {
     lead: '¿Buscas a alguien para un equipo de front-end o de producto con IA? Hablemos de puestos, reubicación o de cómo abordaría tu producto.',
   },
   footer: {
-    builtWith: 'Hecho con Astro, con',
-    pairProgrammer: 'como pair programmer.',
+    creditBefore: 'Diseñado y desarrollado por Mateus Vieira, con desarrollo asistido por IA (',
+    creditAfter: ').',
     source: 'Código fuente',
   },
   notFound: {

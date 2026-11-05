@@ -78,8 +78,9 @@ export interface Dictionary {
     lead: string;
   };
   footer: {
-    builtWith: string;
-    pairProgrammer: string;
+    /** Text around the "Claude Code" link. */
+    creditBefore: string;
+    creditAfter: string;
     source: string;
   };
   notFound: {
@@ -222,8 +223,8 @@ export const en: Dictionary = {
     lead: "Hiring for a front-end or AI product team? I'm happy to talk about roles, relocation, or how I'd approach your product.",
   },
   footer: {
-    builtWith: 'Built with Astro, with',
-    pairProgrammer: 'as pair programmer.',
+    creditBefore: 'Designed and built by Mateus Vieira, with AI-assisted development (',
+    creditAfter: ').',
     source: 'Source',
   },
   notFound: {

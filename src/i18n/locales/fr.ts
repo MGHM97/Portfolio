@@ -134,8 +134,8 @@ export const fr: Dictionary = {
     lead: 'Vous recrutez pour une équipe front-end ou produit IA ? Parlons du poste, d’une relocalisation ou de la façon dont j’aborderais votre produit.',
   },
   footer: {
-    builtWith: 'Réalisé avec Astro, avec',
-    pairProgrammer: 'en pair programming.',
+    creditBefore: 'Conçu et développé par Mateus Vieira, avec un développement assisté par IA (',
+    creditAfter: ').',
     source: 'Code source',
   },
   notFound: {

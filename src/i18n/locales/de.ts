@@ -135,8 +135,8 @@ export const de: Dictionary = {
     lead: 'Sie suchen Verstärkung für ein Frontend- oder KI-Produktteam? Ich spreche gern über Stellen, Relocation oder darüber, wie ich Ihr Produkt angehen würde.',
   },
   footer: {
-    builtWith: 'Erstellt mit Astro, mit',
-    pairProgrammer: 'als Pair-Programmer.',
+    creditBefore: 'Gestaltet und entwickelt von Mateus Vieira, mit KI-gestützter Entwicklung (',
+    creditAfter: ').',
     source: 'Quellcode',
   },
   notFound: {
