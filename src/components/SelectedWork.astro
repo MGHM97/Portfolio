@@ -55,6 +55,12 @@ const work = await getWork(locale);
     border-top: 1px solid var(--border);
   }
 
+  /* The section title already draws a rule; a second one right below reads as noise. */
+  .card:first-child {
+    padding-top: 0;
+    border-top: 0;
+  }
+
   .meta {
     font-size: 0.875rem;
     font-weight: 500;

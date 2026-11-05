@@ -51,6 +51,11 @@ const posts = await getPosts(locale);
     border-top: 1px solid var(--border);
   }
 
+  .post:first-child {
+    padding-top: 0;
+    border-top: 0;
+  }
+
   .meta {
     font-size: 0.875rem;
     color: var(--muted);
