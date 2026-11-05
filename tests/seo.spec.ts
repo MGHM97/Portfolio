@@ -40,3 +40,23 @@ test('pages advertise the RSS feed', async ({ page, request }) => {
   expect(body).toContain('<rss version="2.0">');
   expect(body).toContain('<title>Mateus Vieira — Writing</title>');
 });
+
+test('home ships a web manifest and touch icons', async ({ page, request }) => {
+  await page.goto('/');
+  const manifestHref = await page.locator('link[rel="manifest"]').getAttribute('href');
+  const touchIcon = await page.locator('link[rel="apple-touch-icon"]').getAttribute('href');
+
+  const manifest = await (await request.get(manifestHref!)).json();
+  expect(manifest.icons.map((icon: { sizes: string }) => icon.sizes)).toContain('512x512');
+
+  for (const src of [touchIcon!, ...manifest.icons.map((icon: { src: string }) => icon.src)]) {
+    const response = await request.get(src);
+    expect(response.ok(), src).toBe(true);
+    expect(response.headers()['content-type']).toBe('image/png');
+  }
+});
+
+test('styles are inlined, so nothing blocks the first paint', async ({ page }) => {
+  await page.goto('/');
+  await expect(page.locator('link[rel="stylesheet"]')).toHaveCount(0);
+});

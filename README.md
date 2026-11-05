@@ -34,7 +34,7 @@ The site ships in English (default, at `/`), Spanish (`/es/`), French (`/fr/`), 
 
 To add a string, add it to the `Dictionary` type in `en.ts`; TypeScript then points at every locale that still needs it.
 
-## Social preview images
+## Social preview images and icons
 
 `public/og/<locale>.png` are generated from the dictionaries with the site's own fonts:
 
@@ -43,6 +43,8 @@ yarn og   # builds the site, then renders one 1200×630 image per locale
 ```
 
 Run it whenever the hero role, headline or availability changes, and commit the images.
+
+App icons (`apple-touch-icon.png`, the manifest icons) come from the same mark as `favicon.svg`: `yarn icons` renders them with the site's font.
 
 ## Deployment
 

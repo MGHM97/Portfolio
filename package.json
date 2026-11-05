@@ -10,7 +10,8 @@
     "check": "astro check",
     "format": "prettier --write .",
     "test:e2e": "playwright test",
-    "og": "astro build && node scripts/og.ts"
+    "og": "astro build && node scripts/og.ts",
+    "icons": "astro build && node scripts/icons.ts"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.19",

@@ -12,6 +12,10 @@ const site =
 
 export default defineConfig({
   site,
+  build: {
+    // The CSS is a few KB; inlining it removes the only render-blocking requests.
+    inlineStylesheets: 'always',
+  },
   security: {
     csp: {
       directives: [
