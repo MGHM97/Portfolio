@@ -20,7 +20,6 @@ const hasPosts = (await getPosts(locale)).length > 0;
 
 const nav = [
   ...(hasWork ? [{ hash: 'work', label: dict.nav.work }] : []),
-  { hash: 'open-source', label: dict.nav.openSource },
   ...(hasPosts ? [{ hash: 'writing', label: dict.nav.writing }] : []),
   { hash: 'experience', label: dict.nav.experience },
   { hash: 'skills', label: dict.nav.skills },
