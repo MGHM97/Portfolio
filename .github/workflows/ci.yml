@@ -23,6 +23,7 @@ jobs:
       - run: yarn install --frozen-lockfile
       - run: yarn prettier --check .
       - run: yarn build
+      - run: yarn check:links --external
 
       - run: yarn playwright install --with-deps chromium
       - run: yarn test:e2e

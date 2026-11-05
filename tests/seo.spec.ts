@@ -60,3 +60,12 @@ test('styles are inlined, so nothing blocks the first paint', async ({ page }) =
   await page.goto('/');
   await expect(page.locator('link[rel="stylesheet"]')).toHaveCount(0);
 });
+
+test('the 404 page stays out of search and offers each home page', async ({ page }) => {
+  const response = await page.goto('/this-page-does-not-exist/');
+  expect(response?.status()).toBe(404);
+
+  await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex');
+  await expect(page.locator('link[rel="canonical"]')).toHaveCount(0);
+  await expect(page.locator('.language-switcher a[hreflang="es"]')).toHaveAttribute('href', '/es/');
+});

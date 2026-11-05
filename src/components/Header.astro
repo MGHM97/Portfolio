@@ -8,9 +8,11 @@ import { getWork } from '../lib/work';
 
 interface Props {
   locale: Locale;
+  /** Passed to the language switcher; error pages point it at the home page. */
+  switcherPath?: string;
 }
 
-const { locale } = Astro.props;
+const { locale, switcherPath } = Astro.props;
 const dict = t(locale);
 const home = localizePath(locale);
 const hasWork = (await getWork(locale)).length > 0;
@@ -32,7 +34,7 @@ const nav = [
       {profile.name}
     </a>
     <div class="controls">
-      <LanguageSwitcher locale={locale} />
+      <LanguageSwitcher locale={locale} path={switcherPath} />
       <ThemeToggle label={dict.a11y.toggleTheme} />
       <button
         class="menu-button"

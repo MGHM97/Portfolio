@@ -21,6 +21,7 @@ yarn install
 yarn dev          # http://localhost:4321
 yarn build        # type check + production build
 yarn test:e2e     # runs against the production build
+yarn check:links  # broken links, anchors and images in the build (--external also checks GitHub)
 ```
 
 ## Internationalization

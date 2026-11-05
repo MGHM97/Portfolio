@@ -19,10 +19,11 @@ interface Props {
   description?: string;
   /** Points search engines elsewhere, e.g. to the original of an untranslated page. */
   canonicalLocale?: Locale;
-  alternates?: boolean;
+  /** Error pages set this to false: no canonical, no alternates, and noindex. */
+  indexable?: boolean;
 }
 
-const { locale, canonicalLocale = locale, alternates = true } = Astro.props;
+const { locale, canonicalLocale = locale, indexable = true } = Astro.props;
 const dict = t(locale);
 const title = Astro.props.title ?? dict.meta.title;
 const description = Astro.props.description ?? dict.meta.description;
@@ -40,12 +41,16 @@ const ogImage = new URL(`/og/${locale}.png`, Astro.site);
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href={canonical} />
-    {alternates &&
+    {indexable ? (
+      <link rel="canonical" href={canonical} />
+    ) : (
+      <meta name="robots" content="noindex" />
+    )}
+    {indexable &&
       locales.map((target) => (
         <link rel="alternate" hreflang={languageTags[target]} href={urlFor(target)} />
       ))}
-    {alternates && <link rel="alternate" hreflang="x-default" href={urlFor(defaultLocale)} />}
+    {indexable && <link rel="alternate" hreflang="x-default" href={urlFor(defaultLocale)} />}
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />

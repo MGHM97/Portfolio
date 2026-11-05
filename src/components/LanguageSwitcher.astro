@@ -11,10 +11,11 @@ import {
 
 interface Props {
   locale: Locale;
+  /** Where each language option leads. Defaults to the current page. */
+  path?: string | undefined;
 }
 
-const { locale } = Astro.props;
-const path = stripLocale(Astro.url.pathname);
+const { locale, path = stripLocale(Astro.url.pathname) } = Astro.props;
 const shortCode = (target: Locale) => target.split('-')[0]?.toUpperCase();
 ---
 

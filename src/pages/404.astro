@@ -6,8 +6,8 @@ import { defaultLocale, languageTags, localizePath, locales, t } from '../i18n';
 const dict = t(defaultLocale);
 ---
 
-<Base locale={defaultLocale} title={dict.notFound.title} alternates={false}>
-  <Header locale={defaultLocale} />
+<Base locale={defaultLocale} title={dict.notFound.title} indexable={false}>
+  <Header locale={defaultLocale} switcherPath="/" />
   <main id="main" class="container not-found">
     <p class="code">404</p>
     <h1>{dict.notFound.heading}</h1>
