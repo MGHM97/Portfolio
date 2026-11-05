@@ -8,6 +8,7 @@ import {
   localizePath,
   locales,
   ogLocales,
+  stripEmphasis,
   stripLocale,
   t,
   type Locale,
@@ -75,13 +76,17 @@ const ogImage = new URL(`/og/${locale}.png`, Astro.site);
     <meta property="og:image" content={ogImage} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content={`${dict.hero.role} — ${dict.hero.headline}`} />
+    <meta
+      property="og:image:alt"
+      content={`${dict.hero.role} — ${stripEmphasis(dict.hero.headline)}`}
+    />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content={ogImage} />
 
-    <meta name="theme-color" content="#fbfaf7" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#121211" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f5eee3" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#14100c" media="(prefers-color-scheme: dark)" />
 
+    <Font cssVariable="--font-display" preload />
     <Font cssVariable="--font-sans" preload />
     <Font cssVariable="--font-mono" />
 

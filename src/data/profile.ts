@@ -10,6 +10,15 @@ export const profile = {
   cv: null as string | null,
 };
 
+export const figures = [
+  { id: 'microFrontends', value: '12+' },
+  { id: 'triage', value: '~30%' },
+  { id: 'patients', value: '200+' },
+  { id: 'coverage', value: '~90%' },
+] as const;
+
+export type FigureId = (typeof figures)[number]['id'];
+
 export type WorkMode = 'remote' | 'onSite' | 'hybrid';
 
 export const experience = [

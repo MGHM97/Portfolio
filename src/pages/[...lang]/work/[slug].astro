@@ -58,7 +58,7 @@ const contentLang = isFallback ? languageTags[defaultLocale] : undefined;
             <div>
               <dt>{dict.work.outcomes}</dt>
               <dd lang={contentLang}>
-                <ul>
+                <ul role="list">
                   {data.outcomes.map((outcome) => (
                     <li>{outcome}</li>
                   ))}
@@ -83,8 +83,7 @@ const contentLang = isFallback ? languageTags[defaultLocale] : undefined;
 
 <style>
   .intro {
-    padding-block: clamp(2rem, 8vw, 4rem) 2.5rem;
-    border-bottom: 1px solid var(--border);
+    padding-block: clamp(2rem, 8vw, 4rem) 0;
   }
 
   .back {
@@ -108,14 +107,16 @@ const contentLang = isFallback ? languageTags[defaultLocale] : undefined;
   }
 
   .meta {
-    font-family: var(--font-mono);
-    font-size: 0.8125rem;
+    font-size: 0.875rem;
+    font-weight: 500;
     color: var(--accent);
   }
 
   h1 {
     margin-top: 0.75rem;
-    font-size: clamp(1.875rem, 5vw, 2.75rem);
+    font-size: clamp(2.125rem, 6vw, 3.25rem);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
   }
 
   .summary {
@@ -128,18 +129,14 @@ const contentLang = isFallback ? languageTags[defaultLocale] : undefined;
     display: grid;
     gap: 1.25rem;
     margin-top: 2rem;
-    padding: 1.25rem 1.5rem;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
+    padding-block: 1.25rem;
+    border-block: 1px solid var(--border);
   }
 
   dt {
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--muted);
+    font-family: var(--font-display);
+    font-size: 1.0625rem;
+    font-weight: 500;
   }
 
   dd {
@@ -147,6 +144,19 @@ const contentLang = isFallback ? languageTags[defaultLocale] : undefined;
   }
 
   dd ul {
-    padding-inline-start: 1.1rem;
+    padding: 0;
+    list-style: none;
+  }
+
+  dd li {
+    position: relative;
+    padding-inline-start: 1.5rem;
+  }
+
+  dd li::before {
+    content: '—';
+    position: absolute;
+    inset-inline-start: 0;
+    color: var(--accent);
   }
 </style>

@@ -1,26 +1,39 @@
 ---
-import { profile } from '../data/profile';
-import { t, type Locale } from '../i18n';
+import { figures, profile } from '../data/profile';
+import { splitEmphasis, t, type Locale } from '../i18n';
 
 interface Props {
   locale: Locale;
 }
 
 const { hero } = t(Astro.props.locale);
+const headline = splitEmphasis(hero.headline);
 ---
 
 <section class="container hero" aria-labelledby="hero-title">
-  <p class="status">
-    <span class="dot" aria-hidden="true"></span>
-    {hero.availability}
+  <p class="eyebrow">
+    {hero.role} — {hero.location}
   </p>
 
   <h1 id="hero-title">
-    <span class="role">{hero.role}</span>
-    {hero.headline}
+    {headline.map((part) => (part.emphasis ? <em>{part.text}</em> : part.text))}
   </h1>
 
+  <figure class="meeting">
+    <div class="rivers" aria-hidden="true"></div>
+    <figcaption>{hero.rivers}</figcaption>
+  </figure>
+
   <p class="summary">{hero.summary}</p>
+
+  <ul role="list" class="figures" aria-label={hero.figuresLabel}>
+    {figures.map((figure) => (
+      <li>
+        <span class="value">{figure.value}</span>
+        <span class="label">{hero.figures[figure.id]}</span>
+      </li>
+    ))}
+  </ul>
 
   <div class="actions">
     <a class="button primary" href={`mailto:${profile.email}`}>
@@ -39,56 +52,90 @@ const { hero } = t(Astro.props.locale);
     )}
   </div>
 
-  <p class="meta">
-    {hero.location} · {profile.timezone}
-    <br />
-    {hero.overlap}
-  </p>
+  <div class="availability">
+    <p class="status">{hero.availability}</p>
+    <p class="meta">
+      {profile.timezone} · {hero.overlap}
+    </p>
+  </div>
 </section>
 
 <style>
   .hero {
-    padding-block: clamp(3rem, 12vw, 7rem) clamp(3rem, 8vw, 5rem);
+    padding-block: clamp(2.5rem, 10vw, 6rem) clamp(2.5rem, 6vw, 4rem);
   }
 
-  .status {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.625rem;
-    margin-bottom: 2rem;
-    padding: 0.375rem 0.875rem;
-    background: var(--accent-soft);
-    border-radius: 1rem;
-    font-size: 0.875rem;
-  }
-
-  .dot {
-    flex-shrink: 0;
-    width: 0.5rem;
-    height: 0.5rem;
-    background: var(--accent);
-    border-radius: 50%;
+  .eyebrow {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--accent);
   }
 
   h1 {
-    font-size: clamp(2rem, 6vw, 3.25rem);
-    font-weight: 650;
+    margin-top: 1rem;
+    font-size: clamp(2.5rem, 7.5vw, 4.25rem);
+    line-height: 1.04;
+    letter-spacing: -0.025em;
   }
 
-  .role {
-    display: block;
-    margin-bottom: 0.75rem;
-    font-family: var(--font-mono);
-    font-size: 0.875rem;
-    font-weight: 500;
-    letter-spacing: 0.04em;
+  h1 em {
+    font-style: italic;
     color: var(--accent);
+  }
+
+  .meeting {
+    margin-top: 2.5rem;
+  }
+
+  figcaption {
+    max-width: 30rem;
+    margin-top: 0.75rem;
+    font-family: var(--font-display);
+    font-size: 0.9375rem;
+    font-style: italic;
+    color: var(--muted);
   }
 
   .summary {
     max-width: 38rem;
-    margin-top: 1.5rem;
-    font-size: 1.125rem;
+    margin-top: 2.5rem;
+    font-size: 1.1875rem;
+    line-height: 1.6;
+  }
+
+  .figures {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.75rem 2rem;
+    margin-top: 3rem;
+    padding-block: 1.75rem;
+    border-block: 1px solid var(--border);
+  }
+
+  @media (min-width: 40rem) {
+    .figures {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+
+  .figures li {
+    display: grid;
+    align-content: start;
+    gap: 0.375rem;
+  }
+
+  .value {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  .label {
+    font-size: 0.875rem;
+    line-height: 1.4;
+    text-wrap: pretty;
     color: var(--muted);
   }
 
@@ -99,37 +146,17 @@ const { hero } = t(Astro.props.locale);
     margin-top: 2.5rem;
   }
 
-  .button {
-    padding: 0.625rem 1.125rem;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
+  .availability {
+    margin-top: 2rem;
     font-size: 0.9375rem;
+  }
+
+  .status {
     font-weight: 500;
-    text-decoration: none;
-    transition:
-      border-color 150ms,
-      background-color 150ms;
-  }
-
-  .button:hover {
-    border-color: var(--muted);
-  }
-
-  .primary {
-    background: var(--text);
-    border-color: var(--text);
-    color: var(--bg);
-  }
-
-  .primary:hover {
-    background: var(--accent);
-    border-color: var(--accent);
   }
 
   .meta {
-    margin-top: 2rem;
-    font-family: var(--font-mono);
-    font-size: 0.8125rem;
+    margin-top: 0.25rem;
     color: var(--muted);
   }
 </style>

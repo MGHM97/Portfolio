@@ -23,12 +23,21 @@ export const de: Dictionary = {
   },
   hero: {
     role: 'Senior Frontend Engineer',
-    headline: 'Ich entwickle barrierefreie, zuverlässige Oberflächen für den großen Maßstab.',
+    headline: 'Ich entwickle *barrierefreie*, zuverlässige Oberflächen für den großen Maßstab.',
     summary:
       'Rund fünf Jahre Erfahrung mit React- und TypeScript-Produkten. Bei HP Inc. entwickle ich Micro-Frontends für die HP App, die auf Millionen von Geräten läuft. An der UFAM habe ich das Frontend der klinischen Datenplattform eines Forschungsprojekts zu neurodegenerativen Erkrankungen von Grund auf aufgebaut und leite es. Daneben absolviere ich einen Master mit KI-Schwerpunkt.',
     availability: 'Offen für Remote-Stellen und Relocation — Nordamerika und Europa',
     location: 'Manaus, Brasilien',
     overlap: 'Volle Überschneidung mit der US-Ostküste und dem europäischen Vormittag',
+    figuresLabel: 'Auf einen Blick',
+    figures: {
+      microFrontends: 'Micro-Frontends in Produktion bei HP',
+      triage: 'schnellere Fehleranalyse zwischen Teams',
+      patients: 'Patientinnen und Patienten auf der klinischen Plattform, die ich leite',
+      coverage: 'Testabdeckung in der CI',
+    },
+    rivers:
+      'In Manaus fließen Rio Negro und Solimões nebeneinander, ohne sich zu vermischen – unabhängige Teile eines Flusses.',
     getInTouch: 'Kontakt aufnehmen',
     downloadCv: 'Lebenslauf herunterladen (Englisch)',
   },

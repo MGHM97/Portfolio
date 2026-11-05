@@ -1,6 +1,7 @@
 import type {
   EducationId,
   ExperienceId,
+  FigureId,
   OpenSourceId,
   SkillGroup,
   SpokenLanguage,
@@ -29,11 +30,15 @@ export interface Dictionary {
   };
   hero: {
     role: string;
+    /** Words wrapped in *asterisks* are set in italics. */
     headline: string;
     summary: string;
     availability: string;
     location: string;
     overlap: string;
+    figuresLabel: string;
+    figures: Record<FigureId, string>;
+    rivers: string;
     getInTouch: string;
     downloadCv: string;
   };
@@ -114,12 +119,21 @@ export const en: Dictionary = {
   },
   hero: {
     role: 'Senior Front-end Engineer',
-    headline: 'I build accessible, reliable interfaces at scale.',
+    headline: 'I build *accessible*, reliable interfaces at scale.',
     summary:
       'About five years building React and TypeScript products. At HP Inc. I ship micro-frontends for the HP App, used on millions of devices. At UFAM I built from scratch, and lead, the front-end of the clinical data platform behind a neurodegenerative disease research project. I’m also pursuing a master’s with a focus on AI.',
     availability: 'Open to remote roles and relocation — North America & Europe',
     location: 'Manaus, Brazil',
     overlap: 'Full overlap with US Eastern and European mornings',
+    figuresLabel: 'Highlights',
+    figures: {
+      microFrontends: 'micro-frontends in production at HP',
+      triage: 'faster bug triage across teams',
+      patients: 'patients followed on the clinical platform I lead',
+      coverage: 'test coverage kept in CI',
+    },
+    rivers:
+      'In Manaus, the Rio Negro and the Solimões run side by side without mixing: independent parts of one river.',
     getInTouch: 'Get in touch',
     downloadCv: 'Download CV',
   },

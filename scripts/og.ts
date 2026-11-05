@@ -15,38 +15,46 @@ const escape = (text: string) =>
     (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[char]!,
   );
 
+function headline(text: string) {
+  return escape(text).replace(/\*([^*]+)\*/g, '<em>$1</em>');
+}
+
 function template(dict: Dictionary, fonts: string) {
   return `<!doctype html>
 <html><head><meta charset="utf-8"><style>
 ${fonts}
 * { margin: 0; box-sizing: border-box; }
 body {
-  width: 1200px; height: 630px; padding: 72px 80px;
+  width: 1200px; height: 630px; padding: 72px 80px 64px;
   display: flex; flex-direction: column; justify-content: space-between;
-  background: #121211; color: #ecebe6;
-  font-family: var(--font-sans);
+  background: #14100c; color: #f2e9dc; font-family: var(--font-sans);
 }
-.role { font-family: var(--font-mono); font-size: 26px; letter-spacing: 0.04em; color: #4fd1b8; }
-h1 { margin-top: 24px; max-width: 980px; font-size: 68px; font-weight: 650; line-height: 1.08; letter-spacing: -0.03em; }
-footer { display: flex; align-items: flex-end; justify-content: space-between; gap: 32px; }
-.name { font-size: 34px; font-weight: 600; }
-.stack { margin-top: 8px; font-family: var(--font-mono); font-size: 20px; color: #a3a29b; }
-.status { display: flex; align-items: center; gap: 12px; max-width: 460px; padding: 12px 20px;
-  background: #15302b; border-radius: 16px; font-size: 20px; line-height: 1.3; }
-.dot { flex-shrink: 0; width: 12px; height: 12px; border-radius: 50%; background: #4fd1b8; }
+.role { font-size: 26px; font-weight: 500; color: #e0b27e; }
+h1 {
+  margin-top: 22px; max-width: 1000px;
+  font-family: var(--font-display); font-size: 76px; font-weight: 500;
+  line-height: 1.02; letter-spacing: -0.025em;
+}
+em { font-style: italic; color: #e0b27e; }
+.rivers { display: flex; height: 12px; border-radius: 999px; overflow: hidden; }
+.rivers span:first-child { flex: 1.4; background: #6b4126; }
+.rivers span:last-child { flex: 1; background: #c9a074; }
+footer { display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; margin-top: 28px; }
+.name { font-family: var(--font-display); font-size: 40px; font-weight: 600; letter-spacing: -0.01em; }
+.status { max-width: 520px; font-size: 22px; line-height: 1.35; color: #b3a491; text-align: right; }
 </style></head>
 <body>
   <div>
-    <p class="role">${escape(dict.hero.role)}</p>
-    <h1>${escape(dict.hero.headline)}</h1>
+    <p class="role">${escape(dict.hero.role)} — ${escape(dict.hero.location)}</p>
+    <h1>${headline(dict.hero.headline)}</h1>
   </div>
-  <footer>
-    <div>
+  <div>
+    <div class="rivers"><span></span><span></span></div>
+    <footer>
       <p class="name">Mateus Vieira</p>
-      <p class="stack">React · TypeScript · Micro-frontends · WCAG</p>
-    </div>
-    <p class="status"><span class="dot"></span>${escape(dict.hero.availability)}</p>
-  </footer>
+      <p class="status">${escape(dict.hero.availability)}</p>
+    </footer>
+  </div>
 </body></html>`;
 }
 

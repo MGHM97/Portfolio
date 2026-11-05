@@ -24,6 +24,14 @@ yarn test:e2e     # runs against the production build
 yarn check:links  # broken links, anchors and images in the build (--external also checks GitHub)
 ```
 
+## Design
+
+The visual identity comes from the Meeting of Waters in Manaus, where the dark, tea-coloured Rio Negro and the sandy Solimões run side by side for miles without mixing: independent parts of one river. The dark theme is the Rio Negro, the light theme the Solimões, and a two-colour band is the site's signature.
+
+- Type: Newsreader (display), Schibsted Grotesk (text), IBM Plex Mono (code only)
+- Every text colour meets WCAG AA on every surface in both themes; tokens live in [`src/styles/global.css`](src/styles/global.css)
+- Section numbers are CSS counters with empty alt text, so screen readers read "Experience", not "02 Experience"
+
 ## Internationalization
 
 The site ships in English (default, at `/`), Spanish (`/es/`), French (`/fr/`), German (`/de/`) and Brazilian Portuguese (`/pt-br/`). Every locale is a static page with its own `<html lang>`, canonical URL, `hreflang` alternates and sitemap entry. No JavaScript is involved in switching languages.

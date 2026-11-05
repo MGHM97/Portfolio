@@ -23,12 +23,21 @@ export const ptBr: Dictionary = {
   },
   hero: {
     role: 'Engenheiro Front-end Sênior',
-    headline: 'Construo interfaces acessíveis e confiáveis em grande escala.',
+    headline: 'Construo interfaces *acessíveis* e confiáveis em grande escala.',
     summary:
       'Cerca de cinco anos construindo produtos com React e TypeScript. Na HP Inc., desenvolvo micro-frontends para o HP App, usado em milhões de dispositivos. Na UFAM, criei do zero e lidero o front-end da plataforma de dados clínicos de um projeto de pesquisa sobre doenças neurodegenerativas. Também faço mestrado com ênfase em IA.',
     availability: 'Aberto a vagas remotas e realocação — América do Norte e Europa',
     location: 'Manaus, Brasil',
     overlap: 'Horário compatível com a costa leste dos EUA e com as manhãs na Europa',
+    figuresLabel: 'Destaques',
+    figures: {
+      microFrontends: 'micro-frontends em produção na HP',
+      triage: 'mais rapidez na resolução de bugs entre times',
+      patients: 'pacientes acompanhados na plataforma clínica que lidero',
+      coverage: 'de cobertura de testes no CI',
+    },
+    rivers:
+      'Em Manaus, o Rio Negro e o Solimões correm lado a lado sem se misturar: partes independentes de um mesmo rio.',
     getInTouch: 'Entre em contato',
     downloadCv: 'Baixar currículo (em inglês)',
   },

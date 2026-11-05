@@ -23,12 +23,21 @@ export const fr: Dictionary = {
   },
   hero: {
     role: 'Ingénieur Front-end Senior',
-    headline: 'Je conçois des interfaces accessibles et fiables, à grande échelle.',
+    headline: 'Je conçois des interfaces *accessibles* et fiables, à grande échelle.',
     summary:
       'Environ cinq ans à livrer des produits React et TypeScript. Chez HP Inc., je développe des micro-frontends pour la HP App, utilisée sur des millions d’appareils. À l’UFAM, j’ai créé de zéro et je dirige le front-end de la plateforme de données cliniques d’un projet de recherche sur les maladies neurodégénératives. Je prépare également un master orienté IA.',
     availability: 'Ouvert au télétravail et à la relocalisation — Amérique du Nord et Europe',
     location: 'Manaus, Brésil',
     overlap: 'Disponible sur les horaires de la côte Est américaine et des matinées européennes',
+    figuresLabel: 'En bref',
+    figures: {
+      microFrontends: 'micro-frontends en production chez HP',
+      triage: 'de rapidité en plus pour résoudre les bugs entre équipes',
+      patients: 'patients suivis sur la plateforme clinique que je dirige',
+      coverage: 'de couverture de tests dans la CI',
+    },
+    rivers:
+      'À Manaus, le Rio Negro et le Solimões coulent côte à côte sans se mélanger : des parties indépendantes d’un même fleuve.',
     getInTouch: 'Me contacter',
     downloadCv: 'Télécharger le CV (en anglais)',
   },

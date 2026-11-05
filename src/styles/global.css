@@ -1,35 +1,41 @@
+/* Palette from the Meeting of Waters in Manaus: the dark, tea-coloured Rio Negro
+   and the sandy Solimões run side by side without mixing. */
 :root {
-  --bg: #fbfaf7;
-  --surface: #f2f0ea;
-  --text: #1b1b19;
-  --muted: #5c5b56;
-  --border: #dedbd2;
-  --accent: #0b6b5f;
-  --accent-soft: #dcefe9;
-  --code-keyword: #8a2d82;
-  --code-string: #2f6a1f;
-  --code-function: #1f5ea8;
-  --code-number: #9a4a00;
+  --bg: #f5eee3;
+  --surface: #ece2d2;
+  --accent-soft: #e9dcc6;
+  --text: #1d140d;
+  --muted: #66564a;
+  --border: #dccdb6;
+  --accent: #8a4b1c;
+  --river-negro: #2a1a10;
+  --river-solimoes: #c79a6b;
+  --code-keyword: #7b2e6b;
+  --code-string: #3d6a1e;
+  --code-function: #1f5a8a;
+  --code-number: #8f3f0e;
 
   --measure: 44rem;
   --gutter: clamp(1rem, 4vw, 2rem);
-  --radius: 0.5rem;
+  --radius: 4px;
 
   color-scheme: light;
 }
 
 :root[data-theme='dark'] {
-  --bg: #121211;
-  --surface: #1b1b19;
-  --text: #ecebe6;
-  --muted: #a3a29b;
-  --border: #2e2d2a;
-  --accent: #4fd1b8;
-  --accent-soft: #15302b;
-  --code-keyword: #e39ad9;
-  --code-string: #a8d68a;
-  --code-function: #8cbcf5;
-  --code-number: #f2b47a;
+  --bg: #14100c;
+  --surface: #1d1712;
+  --accent-soft: #2a2017;
+  --text: #f2e9dc;
+  --muted: #b3a491;
+  --border: #352a20;
+  --accent: #e0b27e;
+  --river-negro: #6b4126;
+  --river-solimoes: #c9a074;
+  --code-keyword: #e5a3d6;
+  --code-string: #b5d48a;
+  --code-function: #9cc3ec;
+  --code-number: #f0b07a;
 
   color-scheme: dark;
 }
@@ -63,9 +69,20 @@ body {
 h1,
 h2,
 h3 {
-  line-height: 1.2;
-  letter-spacing: -0.02em;
+  line-height: 1.15;
   text-wrap: balance;
+}
+
+h1,
+h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+}
+
+h3 {
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
 p {
@@ -75,8 +92,11 @@ p {
 a {
   color: inherit;
   text-decoration-color: var(--border);
-  text-underline-offset: 0.2em;
-  transition: text-decoration-color 150ms;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
+  transition:
+    color 150ms,
+    text-decoration-color 150ms;
 }
 
 a:hover {
@@ -101,19 +121,97 @@ a:hover {
   padding-inline: var(--gutter);
 }
 
+main {
+  counter-reset: section;
+}
+
 .section {
   padding-block: clamp(3rem, 8vw, 5rem);
-  border-top: 1px solid var(--border);
 }
 
 .section-title {
-  margin-bottom: 2rem;
-  font-family: var(--font-mono);
-  font-size: 0.8125rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.875rem;
+  margin-bottom: 2.25rem;
+  font-size: clamp(1.625rem, 4vw, 2.125rem);
+}
+
+/* The number is decoration: the empty alt text keeps it out of the heading's name. */
+.section-title::before {
+  counter-increment: section;
+  content: counter(section, decimal-leading-zero);
+  content: counter(section, decimal-leading-zero) / '';
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
   font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--muted);
+  letter-spacing: 0.02em;
+  color: var(--accent);
+}
+
+.section-title::after {
+  content: '';
+  flex: 1;
+  align-self: center;
+  height: 1px;
+  background: var(--border);
+}
+
+.subsection-title {
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.625rem 1.125rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition:
+    border-color 150ms,
+    background-color 150ms,
+    color 150ms;
+}
+
+.button:hover {
+  border-color: var(--text);
+}
+
+.button.primary {
+  background: var(--text);
+  border-color: var(--text);
+  color: var(--bg);
+}
+
+.button.primary:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+/* Two colours meeting at a sharp edge, never blending. */
+.rivers {
+  display: flex;
+  height: 0.5rem;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.rivers::before,
+.rivers::after {
+  content: '';
+}
+
+.rivers::before {
+  flex: 1.4;
+  background: var(--river-negro);
+}
+
+.rivers::after {
+  flex: 1;
+  background: var(--river-solimoes);
 }
 
 .visually-hidden {

@@ -49,7 +49,7 @@ const { experience: copy } = t(locale);
     })}
   </ol>
 
-  <h2 class="section-title subsection-title">{copy.educationTitle}</h2>
+  <h2 class="subsection-title">{copy.educationTitle}</h2>
   <ol role="list" class="timeline compact">
     {education.map((item) => (
       <li class="entry">
@@ -61,7 +61,7 @@ const { experience: copy } = t(locale);
     ))}
   </ol>
 
-  <h2 class="section-title subsection-title">{copy.languagesTitle}</h2>
+  <h2 class="subsection-title">{copy.languagesTitle}</h2>
   <ul role="list" class="timeline compact">
     {spokenLanguages.map((code) => (
       <li class="entry">
@@ -95,9 +95,9 @@ const { experience: copy } = t(locale);
   }
 
   .period {
-    padding-top: 0.2rem;
-    font-family: var(--font-mono);
-    font-size: 0.8125rem;
+    padding-top: 0.15rem;
+    font-size: 0.875rem;
+    font-variant-numeric: tabular-nums;
     color: var(--muted);
   }
 
@@ -128,6 +128,6 @@ const { experience: copy } = t(locale);
   }
 
   .subsection-title {
-    margin-top: 4rem;
+    margin-top: 3.5rem;
   }
 </style>

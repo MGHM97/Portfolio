@@ -23,12 +23,21 @@ export const es: Dictionary = {
   },
   hero: {
     role: 'Ingeniero Front-end Sénior',
-    headline: 'Construyo interfaces accesibles y fiables a gran escala.',
+    headline: 'Construyo interfaces *accesibles* y fiables a gran escala.',
     summary:
       'Unos cinco años creando productos con React y TypeScript. En HP Inc. desarrollo micro-frontends para la HP App, usada en millones de dispositivos. En la UFAM creé desde cero, y lidero, el front-end de la plataforma de datos clínicos de un proyecto de investigación sobre enfermedades neurodegenerativas. Además, curso un máster con enfoque en IA.',
     availability: 'Disponible para trabajo remoto y reubicación — Norteamérica y Europa',
     location: 'Manaos, Brasil',
     overlap: 'Coincidencia horaria total con la costa este de EE. UU. y las mañanas europeas',
+    figuresLabel: 'Destacados',
+    figures: {
+      microFrontends: 'micro-frontends en producción en HP',
+      triage: 'más rapidez al resolver bugs entre equipos',
+      patients: 'pacientes acompañados en la plataforma clínica que lidero',
+      coverage: 'de cobertura de tests en el CI',
+    },
+    rivers:
+      'En Manaos, el río Negro y el Solimões corren lado a lado sin mezclarse: partes independientes de un mismo río.',
     getInTouch: 'Contáctame',
     downloadCv: 'Descargar CV (en inglés)',
   },

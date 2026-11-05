@@ -42,14 +42,23 @@ export default defineConfig({
   fonts: [
     {
       provider: fontProviders.google(),
-      name: 'Geist',
+      name: 'Newsreader',
+      cssVariable: '--font-display',
+      weights: ['400 600'],
+      styles: ['normal', 'italic'],
+      fallbacks: ['Georgia', 'serif'],
+    },
+    {
+      provider: fontProviders.google(),
+      name: 'Schibsted Grotesk',
       cssVariable: '--font-sans',
       weights: ['400 700'],
+      styles: ['normal', 'italic'],
       fallbacks: ['system-ui', 'sans-serif'],
     },
     {
       provider: fontProviders.google(),
-      name: 'Geist Mono',
+      name: 'IBM Plex Mono',
       cssVariable: '--font-mono',
       weights: [400, 500],
       fallbacks: ['ui-monospace', 'monospace'],
