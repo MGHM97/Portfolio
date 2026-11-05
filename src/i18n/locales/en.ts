@@ -183,7 +183,7 @@ export const en: Dictionary = {
         role: 'Senior Software Engineer',
         highlights: [
           "Built 12+ production micro-frontends in React and TypeScript for the HP App, HP's cross-platform app (Windows, macOS, iOS, Android) where people add and manage their laptops, desktops, monitors and accessories, used on millions of active devices.",
-          'Cut cross-team bug resolution time by ~30% with privacy-compliant observability logs for API and native payloads, plus troubleshooting playbooks.',
+          'Cut cross-team bug resolution time by ~30% with privacy-compliant console logs that show every team whether API and native calls arrived, completed or failed, plus troubleshooting playbooks.',
           'Delivered micro-frontends through independent deployment pipelines on SystemJS and import maps, from runtime loading and versioning to DEV/ITG/PROD rollouts inside the native Windows host.',
           'Traced cross-platform regressions from the JavaScript UI through bridge APIs down to native C#/.NET libraries.',
           'Carried out the React 16 → 18 upgrades and standardized Jest, Playwright and React Testing Library, keeping ~90% test coverage in GitHub Actions CI.',
@@ -193,11 +193,11 @@ export const en: Dictionary = {
         role: 'Lead Front-end Engineer · Clinical research platform',
         note: 'Part-time academic project',
         highlights: [
-          'Started from scratch and lead the front-end (~90% of the code) of the web platform (React 19, TypeScript, Vite) where doctors, nurses and medical students record and follow 200+ patients in a neurodegenerative disease research project. The project’s AI team builds its models on this data.',
+          'Started from scratch and lead the front-end (~90% of the code) of the web platform (React 19, TypeScript, Vite) where doctors, nurses, residents and medical students record and follow 200+ patients in a neurodegenerative disease research project. The project’s AI team builds its models on this data.',
           'Built the clinical data capture workflow: 16 case report forms with conditional fields and risk scores calculated in real time.',
-          'Built dashboards that track each patient over time, including data from wearable devices.',
+          'Built dashboards that track each patient over time, including data from the devices used in the study.',
           'Delivered research data export (841 fields to XLSX/CSV), PDF medical reports and role-based JWT authentication.',
-          'Built the in-app change-request flow: clinicians describe what they need, attach screenshots or PDFs and see an estimated delivery date.',
+          'Built the in-app change-request flow: clinicians describe what they need, attach screenshots or PDFs and see an estimated delivery date, and every request, urgent or not, is tracked there.',
         ],
       },
       ipdec: {

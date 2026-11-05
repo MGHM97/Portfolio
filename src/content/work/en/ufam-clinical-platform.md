@@ -1,6 +1,6 @@
 ---
 title: Building a clinical research platform from scratch
-summary: The web platform where doctors, nurses and medical students record and follow 200+ patients in a neurodegenerative disease research project, and the data source for the project's AI team.
+summary: The web platform where doctors, nurses, residents and medical students record and follow 200+ patients in a neurodegenerative disease research project, and the data source for the project's AI team.
 company: UFAM
 role: Lead Front-end Engineer
 period: July 2025 — Present
@@ -11,12 +11,12 @@ outcomes:
   - 16 case report forms with real-time risk scores
   - 841 research fields exportable to XLSX/CSV
 order: 2
-draft: true
+draft: false
 ---
 
 ## Context
 
-At the Federal University of Amazonas (UFAM), a research project follows patients with neurodegenerative diseases over time. Doctors, nurses and medical students take part in it, and a separate AI team builds predictive models.
+At the Federal University of Amazonas (UFAM), a research project follows patients with neurodegenerative diseases over time. Doctors, nurses, residents and medical students take part in it, and a separate AI team builds predictive models.
 
 I started the web platform the clinical team works in from the first commit and lead its front-end, having written about 90% of the code; colleagues have contributed form adjustments and the CI pipeline. It's a part-time academic role alongside my master's in electrical engineering with a focus on AI.
 
@@ -30,7 +30,7 @@ The clinical team needed one place to register patients, run assessments and fol
 
 - 16 case report forms, many with fields that depend on earlier answers
 - risk scores shown while the assessment is still being filled in
-- a view of each patient's evolution, including wearable data
+- a view of each patient's evolution, including data from the devices used in the study
 - exports researchers can open in their own tools
 - access limited by role, since the records are about real patients
 
@@ -50,13 +50,13 @@ In a clinical record, "no" and "not assessed" mean different things, and mixing 
 
 ### Following patients over time
 
-I built dashboards with MUI X Charts that show each patient's evolution, including data from the wearable devices used in the study.
+I built dashboards with MUI X Charts that show each patient's evolution, including data from the devices used in the study.
 
 ### A feedback loop clinicians actually use
 
 The people using the platform are doctors and nurses in the middle of a study, not a product team. Feedback had to be as easy as reporting a problem to a colleague.
 
-So the platform has its own change-request screen. A clinician describes the adjustment they need, attaches a screenshot or PDF when it's something visual, and sees an estimated delivery date for it. For anything urgent, they can still message the team directly. Most improvements to the forms came through this loop.
+So the platform has its own change-request screen, one click away in the side menu. A clinician describes the adjustment they need, attaches a screenshot or PDF when it's something visual, and sees an estimated delivery date for it. Every request lives in that table, so clinicians and developers share one list of what's pending and when it ships. Even a real emergency that reaches us by message first gets registered there.
 
 The screen is still new, and clinicians have already used it for around eight requests.
 

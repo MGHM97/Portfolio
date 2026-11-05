@@ -11,7 +11,7 @@ outcomes:
   - ~90% test coverage enforced in CI
   - React 16 → 18 upgrades with no production regressions
 order: 1
-draft: true
+draft: false
 ---
 
 ## Context
@@ -38,7 +38,7 @@ The platform loads micro-frontends at runtime with SystemJS and import maps, and
 
 ### Observability that respects privacy
 
-Tracing a failure across teams was slow until I added structured logs at the bridge. They expose the API and native payloads that cross it, with sensitive fields kept out by design, and come with playbooks so any team can follow a failure from the UI to native code. Cross-team bug resolution got about 30% faster.
+Tracing a failure across teams was slow until I added logging at the bridge. Any team can now open the console and see what matters about each API and native call: whether the data arrived, whether it completed, or where it failed. Sensitive data is kept out by design. Together with troubleshooting playbooks, this let each team find out quickly whether a problem was theirs, and cross-team bug resolution got about 30% faster.
 
 ### Debugging through the bridge
 

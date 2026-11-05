@@ -87,7 +87,7 @@ export const ptBr: Dictionary = {
         role: 'Engenheiro de Software Sênior',
         highlights: [
           'Desenvolvi mais de 12 micro-frontends em produção com React e TypeScript para o HP App, o app multiplataforma da HP (Windows, macOS, iOS, Android) em que as pessoas adicionam e gerenciam seus notebooks, desktops, monitores e acessórios, usado em milhões de dispositivos ativos.',
-          'Acelerei em ~30% a resolução de bugs entre times com logs de observabilidade que respeitam a privacidade, expondo payloads de API e nativos, e playbooks de troubleshooting.',
+          'Acelerei em ~30% a resolução de bugs entre times com logs no console que respeitam a privacidade e mostram a qualquer time se as chamadas à API e ao código nativo chegaram, terminaram ou falharam, além de playbooks de troubleshooting.',
           'Entreguei micro-frontends por pipelines de deploy independentes baseados em SystemJS e import maps, do carregamento em tempo de execução e versionamento até os rollouts DEV/ITG/PROD dentro do host nativo Windows.',
           'Rastreei regressões multiplataforma desde a interface em JavaScript, passando pelas bridge APIs, até as bibliotecas nativas em C#/.NET.',
           'Executei as migrações do React 16 para o 18 e padronizei Jest, Playwright e React Testing Library, mantendo ~90% de cobertura de testes no CI com GitHub Actions.',
@@ -97,11 +97,11 @@ export const ptBr: Dictionary = {
         role: 'Líder de Front-end · Plataforma de pesquisa clínica',
         note: 'Projeto acadêmico em meio período',
         highlights: [
-          'Criei do zero e lidero o front-end (~90% do código) da plataforma web (React 19, TypeScript, Vite) onde médicos, enfermeiros e estudantes de medicina cadastram e acompanham mais de 200 pacientes de um projeto de pesquisa sobre doenças neurodegenerativas. O time de IA do projeto constrói seus modelos a partir desses dados.',
+          'Criei do zero e lidero o front-end (~90% do código) da plataforma web (React 19, TypeScript, Vite) onde médicos, enfermeiros, residentes e estudantes de medicina cadastram e acompanham mais de 200 pacientes de um projeto de pesquisa sobre doenças neurodegenerativas. O time de IA do projeto constrói seus modelos a partir desses dados.',
           'Desenvolvi o fluxo de captura de dados clínicos: 16 fichas clínicas (CRFs) com campos condicionais e escores de risco calculados em tempo real.',
-          'Desenvolvi dashboards que acompanham a evolução de cada paciente, incluindo dados de dispositivos vestíveis (wearables).',
+          'Desenvolvi dashboards que acompanham a evolução de cada paciente, incluindo dados dos dispositivos usados no estudo.',
           'Entreguei a exportação de dados de pesquisa (841 campos para XLSX/CSV), laudos médicos em PDF e autenticação JWT com permissões por perfil.',
-          'Desenvolvi o fluxo de pedidos de ajuste dentro da plataforma: os profissionais descrevem o que precisam, anexam imagens ou PDFs e veem uma previsão de entrega.',
+          'Desenvolvi o fluxo de pedidos de ajuste dentro da plataforma: os profissionais descrevem o que precisam, anexam imagens ou PDFs e veem uma previsão de entrega, e todo pedido, urgente ou não, fica registrado ali.',
         ],
       },
       ipdec: {

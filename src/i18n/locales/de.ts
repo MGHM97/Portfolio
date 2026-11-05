@@ -89,7 +89,7 @@ export const de: Dictionary = {
         role: 'Senior Software Engineer',
         highlights: [
           'Über 12 Micro-Frontends mit React und TypeScript für die HP App in Produktion gebracht – die plattformübergreifende App von HP (Windows, macOS, iOS, Android), in der Nutzerinnen und Nutzer ihre Notebooks, Desktops, Monitore und ihr Zubehör hinzufügen und verwalten, genutzt auf Millionen aktiver Geräte.',
-          'Fehlerbehebung zwischen Teams um ~30 % beschleunigt – mit datenschutzkonformen Observability-Logs für API- und native Payloads sowie Troubleshooting-Playbooks.',
+          'Fehlerbehebung zwischen Teams um ~30 % beschleunigt – mit datenschutzkonformen Konsolen-Logs, die jedem Team zeigen, ob API- und native Aufrufe angekommen, abgeschlossen oder fehlgeschlagen sind, sowie Troubleshooting-Playbooks.',
           'Micro-Frontends über unabhängige Deployment-Pipelines auf Basis von SystemJS und Import Maps ausgeliefert – vom Laden zur Laufzeit und der Versionierung bis zu DEV/ITG/PROD-Rollouts im nativen Windows-Host.',
           'Plattformübergreifende Regressionen von der JavaScript-Oberfläche über Bridge-APIs bis in native C#/.NET-Bibliotheken zurückverfolgt.',
           'Upgrades von React 16 auf 18 umgesetzt und Jest, Playwright und React Testing Library vereinheitlicht, bei ~90 % Testabdeckung in der GitHub-Actions-CI.',
@@ -99,11 +99,11 @@ export const de: Dictionary = {
         role: 'Lead Frontend Engineer · Klinische Forschungsplattform',
         note: 'Akademisches Projekt in Teilzeit',
         highlights: [
-          'Frontend der Webplattform (React 19, TypeScript, Vite) von Grund auf aufgebaut und geleitet (rund 90 % des Codes), in der Ärzte, Pflegekräfte und Medizinstudierende über 200 Patientinnen und Patienten eines Forschungsprojekts zu neurodegenerativen Erkrankungen erfassen und begleiten. Das KI-Team des Projekts trainiert seine Modelle mit diesen Daten.',
+          'Frontend der Webplattform (React 19, TypeScript, Vite) von Grund auf aufgebaut und geleitet (rund 90 % des Codes), in der Ärzte, Pflegekräfte, Assistenzärzte und Medizinstudierende über 200 Patientinnen und Patienten eines Forschungsprojekts zu neurodegenerativen Erkrankungen erfassen und begleiten. Das KI-Team des Projekts trainiert seine Modelle mit diesen Daten.',
           'Erfassung klinischer Daten umgesetzt: 16 Prüfbögen (Case Report Forms) mit bedingten Feldern und in Echtzeit berechneten Risikowerten.',
-          'Dashboards entwickelt, die den Verlauf jeder Patientin und jedes Patienten zeigen, einschließlich Daten von Wearables.',
+          'Dashboards entwickelt, die den Verlauf jeder Patientin und jedes Patienten zeigen, einschließlich Daten der im Rahmen der Studie eingesetzten Geräte.',
           'Export der Forschungsdaten (841 Felder nach XLSX/CSV), medizinische PDF-Berichte und JWT-Authentifizierung mit rollenbasierten Berechtigungen geliefert.',
-          'Änderungsanfragen direkt in der Plattform umgesetzt: Das Fachpersonal beschreibt, was es braucht, hängt Screenshots oder PDFs an und sieht ein voraussichtliches Lieferdatum.',
+          'Änderungsanfragen direkt in der Plattform umgesetzt: Das Fachpersonal beschreibt, was es braucht, hängt Screenshots oder PDFs an und sieht ein voraussichtliches Lieferdatum; jede Anfrage, ob dringend oder nicht, wird dort erfasst.',
         ],
       },
       ipdec: {

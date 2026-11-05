@@ -87,7 +87,7 @@ export const es: Dictionary = {
         role: 'Ingeniero de Software Sénior',
         highlights: [
           'Desarrollé más de 12 micro-frontends en producción con React y TypeScript para la HP App, la aplicación multiplataforma de HP (Windows, macOS, iOS, Android) donde las personas añaden y gestionan sus portátiles, ordenadores de sobremesa, monitores y accesorios, usada en millones de dispositivos activos.',
-          'Reduje en ~30 % el tiempo de resolución de bugs entre equipos con logs de observabilidad que respetan la privacidad, para payloads de API y nativos, y guías de diagnóstico.',
+          'Reduje en ~30 % el tiempo de resolución de bugs entre equipos con logs en consola que respetan la privacidad y muestran a cada equipo si las llamadas a la API y al código nativo llegaron, terminaron o fallaron, además de guías de diagnóstico.',
           'Entregué micro-frontends a través de pipelines de despliegue independientes basados en SystemJS e import maps, desde la carga en tiempo de ejecución y el versionado hasta los despliegues DEV/ITG/PROD dentro del host nativo de Windows.',
           'Rastreé regresiones multiplataforma desde la interfaz en JavaScript, pasando por las bridge APIs, hasta las bibliotecas nativas en C#/.NET.',
           'Ejecuté las migraciones de React 16 a 18 y estandaricé Jest, Playwright y React Testing Library, manteniendo ~90 % de cobertura de tests en el CI de GitHub Actions.',
@@ -97,11 +97,11 @@ export const es: Dictionary = {
         role: 'Líder de Front-end · Plataforma de investigación clínica',
         note: 'Proyecto académico a tiempo parcial',
         highlights: [
-          'Creé desde cero y lidero el front-end (~90 % del código) de la plataforma web (React 19, TypeScript, Vite) en la que médicos, enfermeros y estudiantes de medicina registran y siguen a más de 200 pacientes de un proyecto de investigación sobre enfermedades neurodegenerativas. El equipo de IA del proyecto entrena sus modelos con estos datos.',
+          'Creé desde cero y lidero el front-end (~90 % del código) de la plataforma web (React 19, TypeScript, Vite) en la que médicos, enfermeros, residentes y estudiantes de medicina registran y siguen a más de 200 pacientes de un proyecto de investigación sobre enfermedades neurodegenerativas. El equipo de IA del proyecto entrena sus modelos con estos datos.',
           'Desarrollé el flujo de captura de datos clínicos: 16 formularios de caso con campos condicionales y puntuaciones de riesgo calculadas en tiempo real.',
-          'Desarrollé paneles que muestran la evolución de cada paciente, incluidos datos de dispositivos wearables.',
+          'Desarrollé paneles que muestran la evolución de cada paciente, incluidos datos de los dispositivos usados en el estudio.',
           'Entregué la exportación de datos de investigación (841 campos a XLSX/CSV), informes médicos en PDF y autenticación JWT con permisos por rol.',
-          'Desarrollé el flujo de solicitudes de ajuste dentro de la plataforma: los profesionales describen lo que necesitan, adjuntan capturas o PDF y ven una fecha estimada de entrega.',
+          'Desarrollé el flujo de solicitudes de ajuste dentro de la plataforma: los profesionales describen lo que necesitan, adjuntan capturas o PDF y ven una fecha estimada de entrega, y todas las solicitudes, urgentes o no, quedan registradas allí.',
         ],
       },
       ipdec: {

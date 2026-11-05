@@ -88,7 +88,7 @@ export const fr: Dictionary = {
         role: 'Ingénieur logiciel senior',
         highlights: [
           'Développement de plus de 12 micro-frontends en production avec React et TypeScript pour la HP App, l’application multiplateforme de HP (Windows, macOS, iOS, Android) où les utilisateurs ajoutent et gèrent leurs ordinateurs portables et de bureau, écrans et accessoires, utilisée sur des millions d’appareils actifs.',
-          'Réduction d’environ 30 % du temps de résolution des bugs entre équipes grâce à des logs d’observabilité respectueux de la vie privée pour les payloads API et natifs, accompagnés de guides de diagnostic.',
+          'Réduction d’environ 30 % du temps de résolution des bugs entre équipes grâce à des logs en console respectueux de la vie privée, qui montrent à chaque équipe si les appels API et natifs sont arrivés, se sont terminés ou ont échoué, accompagnés de guides de diagnostic.',
           'Livraison de micro-frontends via des pipelines de déploiement indépendants reposant sur SystemJS et les import maps, du chargement à l’exécution et du versionnage jusqu’aux déploiements DEV/ITG/PROD dans l’hôte Windows natif.',
           'Analyse de régressions multiplateformes depuis l’interface JavaScript, à travers les bridge APIs, jusqu’aux bibliothèques natives C#/.NET.',
           'Réalisation des migrations de React 16 à 18 et standardisation de Jest, Playwright et React Testing Library, avec une couverture de tests d’environ 90 % dans la CI GitHub Actions.',
@@ -98,11 +98,11 @@ export const fr: Dictionary = {
         role: 'Lead Front-end · Plateforme de recherche clinique',
         note: 'Projet académique à temps partiel',
         highlights: [
-          'Création de zéro et direction du front-end (environ 90 % du code) de la plateforme web (React 19, TypeScript, Vite) où médecins, infirmiers et étudiants en médecine enregistrent et suivent plus de 200 patients d’un projet de recherche sur les maladies neurodégénératives. L’équipe IA du projet construit ses modèles à partir de ces données.',
+          'Création de zéro et direction du front-end (environ 90 % du code) de la plateforme web (React 19, TypeScript, Vite) où médecins, infirmiers, internes et étudiants en médecine enregistrent et suivent plus de 200 patients d’un projet de recherche sur les maladies neurodégénératives. L’équipe IA du projet construit ses modèles à partir de ces données.',
           'Développement du flux de saisie des données cliniques : 16 formulaires de cas avec champs conditionnels et scores de risque calculés en temps réel.',
-          'Développement de tableaux de bord qui suivent l’évolution de chaque patient, y compris les données d’objets connectés.',
+          'Développement de tableaux de bord qui suivent l’évolution de chaque patient, y compris les données des appareils utilisés dans l’étude.',
           'Livraison de l’export des données de recherche (841 champs vers XLSX/CSV), de rapports médicaux en PDF et d’une authentification JWT avec permissions par rôle.',
-          'Développement du flux de demandes d’ajustement intégré à la plateforme : les soignants décrivent leur besoin, joignent captures d’écran ou PDF et voient une date de livraison estimée.',
+          'Développement du flux de demandes d’ajustement intégré à la plateforme : les soignants décrivent leur besoin, joignent captures d’écran ou PDF et voient une date de livraison estimée ; chaque demande, urgente ou non, y est suivie.',
         ],
       },
       ipdec: {
